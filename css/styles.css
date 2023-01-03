@@ -45,6 +45,53 @@
     }
 }
 
+@-webkit-keyframes hvr-icon-bob-2 {
+    0% {
+        -webkit-transform: scale(1.04) translateY(-2px);
+        transform: scale(1.04) translateY(-2px);
+    }
+
+    50% {
+        -webkit-transform:scale(1.04)  translateY(2px);
+        transform:scale(1.04)  translateY(2px);
+    }
+
+    100% {
+        -webkit-transform: scale(1.04) translateY(-2px);
+        transform: scale(1.04) translateY(-2px);
+    }
+}
+
+@keyframes hvr-icon-bob-2 {
+    0% {
+        -webkit-transform: scale(1.04) translateY(-2px);
+        transform: scale(1.04) translateY(-2px);
+    }
+
+    50% {
+        -webkit-transform:scale(1.04)  translateY(2px);
+        transform:scale(1.04)  translateY(2px);
+    }
+
+    100% {
+        -webkit-transform: scale(1.04) translateY(-2px);
+        transform: scale(1.04) translateY(-2px);
+    }
+}
+
+@-webkit-keyframes hvr-icon-bob-float-2 {
+    100% {
+        -webkit-transform: translateY(-8px);
+    }
+}
+
+@keyframes hvr-icon-bob-float-2 {
+    100% {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
+}
+
 @-webkit-keyframes rotate360 {
     to {
         -webkit-transform: rotate(360deg);
@@ -85,6 +132,7 @@
 
 body {
     background-color: #fffce8;
+    background: linear-gradient(to bottom, #fffae2, #fffcef, #fffce8, rgb(45, 191, 248));
     color: #575757;
     font-family: 'Space Mono', monospace;
     font-size: var(--fs-body);
@@ -147,6 +195,7 @@ main {
 .item-card .item video {
     border-radius: inherit;
     max-width: 100%;
+    object-fit: cover;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     transition: all 380ms ease-in-out;
@@ -317,6 +366,39 @@ main {
     color: #575757;
     margin-bottom: 25px;
 }
+
+.the-wonder-kid-item {
+    overflow: hidden;
+    position: relative;
+}
+
+.the-wonder-kid-item video {
+    visibility: hidden;
+}
+
+.the-wonder-kid {
+    -webkit-animation-delay: 0s, .5s;
+    animation-delay: 0s, .6s;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
+    -webkit-animation-duration: .5s, 1.5s;
+    animation-duration: .5s, 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-name: hvr-icon-bob-float-2, hvr-icon-bob-2;
+    animation-name: hvr-icon-bob-float-2, hvr-icon-bob-2;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    background: url('../assets/images/logos/theWonderKid.png') center / cover no-repeat;
+    border-radius: 40%;
+    box-shadow: inset 0 0 11px 15px black;
+    inset: 0;
+    position: absolute;
+}
+
+
 
 @media only screen and (min-width: 735px) {
     .item-list {
