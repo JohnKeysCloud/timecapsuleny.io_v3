@@ -12,12 +12,12 @@ function switchColor(e) {
     console.log(e.target);
     if (e.target.value === 'Kuro') {
         itemVideos[0].pause();
-        itemSources[0].src = 'assets/productsAnimated/hoodie-theCloud-K.webm';
+        itemSources[0].src = 'assets/images/productsAnimated/hoodie-theCloud-K.webm';
         itemVideos[0].load();
         itemVideos[0].play();
     } else if (e.target.value === 'Mashumaro') {
         itemVideos[0].pause();
-        itemSources[0].src = 'assets/productsAnimated/hoodie-theCloud-M.webm';
+        itemSources[0].src = 'assets/images/productsAnimated/hoodie-theCloud-M.webm';
         itemVideos[0].load();
         itemVideos[0].play();
     }
@@ -27,17 +27,17 @@ function switchColorTwo(e) {
     console.log(e.target);
     if (e.target.value === 'Kuro') {
         itemVideos[1].pause();
-        itemSources[1].src = 'assets/productsAnimated/beanie-cycloneV1-K.webm';
+        itemSources[1].src = 'assets/images/productsAnimated/beanie-cycloneV1-K.webm';
         itemVideos[1].load();
         itemVideos[1].play();
     } else if (e.target.value === 'Mashumaro') {
         itemVideos[1].pause();
-        itemSources[1].src = 'assets/productsAnimated/beanie-cycloneV1-M.webm';
+        itemSources[1].src = 'assets/images/productsAnimated/beanie-cycloneV1-M.webm';
         itemVideos[1].load();
         itemVideos[1].play();
     } else if (e.target.value === 'Sora') {
         itemVideos[1].pause();
-        itemSources[1].src = 'assets/productsAnimated/beanie-cycloneV1-S.webm';
+        itemSources[1].src = 'assets/images/productsAnimated/beanie-cycloneV1-S.webm';
         itemVideos[1].load();
         itemVideos[1].play();
     }
@@ -47,17 +47,17 @@ function switchColorThree(e) {
     console.log(e.target);
     if (e.target.value === 'Kuro') {
         itemVideos[2].pause();
-        itemSources[2].src = 'assets/productsAnimated/socks-cyclone-K.webm';
+        itemSources[2].src = 'assets/images/productsAnimated/socks-cyclone-K.webm';
         itemVideos[2].load();
         itemVideos[2].play();
     } else if (e.target.value === 'Mashumaro') {
         itemVideos[2].pause();
-        itemSources[2].src = 'assets/productsAnimated/socks-cyclone-M.webm';
+        itemSources[2].src = 'assets/images/productsAnimated/socks-cyclone-M.webm';
         itemVideos[2].load();
         itemVideos[2].play();
     } else if (e.target.value === 'Sora') {
         itemVideos[2].pause();
-        itemSources[2].src = 'assets/productsAnimated/socks-cyclone-S.webm';
+        itemSources[2].src = 'assets/images/productsAnimated/socks-cyclone-S.webm';
         itemVideos[2].load();
         itemVideos[2].play();
     }
