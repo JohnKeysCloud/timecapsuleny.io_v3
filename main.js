@@ -7,8 +7,7 @@ const itemFiveRadios = document.querySelectorAll('input[name="item-5"]');
 const itemVideos = document.querySelectorAll('.item-video');
 const itemSources = document.querySelectorAll('.item-source');
 
-
-function switchColor(e) {
+function switchColor() {
     console.log(e.target);
     if (e.target.value === 'Kuro') {
         itemVideos[0].pause();
@@ -23,7 +22,7 @@ function switchColor(e) {
     }
 }
 
-function switchColorTwo(e) {
+function switchColorTwo() {
     console.log(e.target);
     if (e.target.value === 'Kuro') {
         itemVideos[1].pause();
@@ -43,7 +42,7 @@ function switchColorTwo(e) {
     }
 }
 
-function switchColorThree(e) {
+function switchColorThree() {
     console.log(e.target);
     if (e.target.value === 'Kuro') {
         itemVideos[2].pause();
