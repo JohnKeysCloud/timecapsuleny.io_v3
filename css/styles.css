@@ -78,15 +78,16 @@
 }
 
 :root {
-    --fs-h1: clamp(0.8rem, 3.8vw, 1rem);
-    --fs-h2: clamp(0.75rem, 3.5vw, 0.8rem);
-    --fs-body: clamp(1.5rem, 3vw, 3rem);
+    --fs-h1: clamp(1rem, 2.2vw, 1.125rem);
+    --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
+    --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 }
 
 body {
     background-color: #fffce8;
     color: #FFFCEF;
     font-family: 'Space Mono', monospace;
+    font-size: var(--fs-body);
     line-height: 1.5;
     margin: 0;
 }
@@ -134,7 +135,7 @@ main {
 
 .item-card .item {
     background: #fffce8;
-    border-radius: 35%;
+    border-radius: 40%;
     box-shadow: inset -11px 11px 22px #d9d6c5,
             inset 11px -11px 22px #ffffff;
     display: grid;
@@ -189,7 +190,7 @@ main {
     
     align-items: center;
     display: flex;
-    font-size: var(--fs-h2);
+    font-size: var(--fs-label);
     justify-content: space-around;
     margin-bottom: 25px;
 }
@@ -324,7 +325,7 @@ main {
     .item-card .item {
         margin-bottom: 25px;
     }
-    
+
     .item-card .item-price {
         margin-bottom: 0;
     }
