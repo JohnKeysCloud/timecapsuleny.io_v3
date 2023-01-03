@@ -85,7 +85,7 @@
 
 body {
     background-color: #fffce8;
-    color: #FFFCEF;
+    color: #575757;
     font-family: 'Space Mono', monospace;
     font-size: var(--fs-body);
     line-height: 1.5;
@@ -178,6 +178,7 @@ main {
 .item-card .item-title {
     /* border: 1px solid red; */
 
+    color: #575757;
     font-size: var(--fs-h1);
     font-weight: bold;
     margin-bottom: 25px;
@@ -269,6 +270,7 @@ main {
 }
 
 .item-card .label-container span {
+    color:#575757;
     position: absolute;
     display: inline-block;
     height: 35px;
@@ -312,6 +314,7 @@ main {
 .item-card .item-price {
     /* border: 1px solid red; */
 
+    color: #575757;
     margin-bottom: 25px;
 }
 
