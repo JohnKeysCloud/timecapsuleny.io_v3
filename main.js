@@ -1,72 +1,22 @@
-const itemOneRadios = document.querySelectorAll('input[name="item-1"]');
-const itemTwoRadios = document.querySelectorAll('input[name="item-2"]');
-const itemThreeRadios = document.querySelectorAll('input[name="item-3"]');
-const itemFourRadios = document.querySelectorAll('input[name="item-4"]');
-const itemFiveRadios = document.querySelectorAll('input[name="item-5"]');
+const colorRadios = document.querySelectorAll('input[type="radio"]');
+console.log(colorRadios);
 
-const itemVideos = document.querySelectorAll('.item-video');
-const itemSources = document.querySelectorAll('.item-source');
+function switchItemColor(e) {
+    let radioItemValue = e.target.value; 
 
-function switchColor(e) {
-    if (e.target.value === 'Kuro') {
-        itemVideos[0].pause();
-        itemSources[0].src = 'assets/images/products-animated/hoodie-theCloud-K.webm';
-        itemVideos[0].load();
-        itemVideos[0].play();
-    } else if (e.target.value === 'Mashumaro') {
-        itemVideos[0].pause();
-        itemSources[0].src = 'assets/images/products-animated/hoodie-theCloud-M.webm';
-        itemVideos[0].load();
-        itemVideos[0].play();
-    }
+    let closestItemCard = (e.target.closest('.item-card'));
+    let closestItemSource = closestItemCard.querySelector('.item-source');
+    let closestVideoElement = closestItemSource.parentElement;
+
+    let colorRegEx = /(?<=\_)(.*?)(?=\.)/;
+    let newVideoSource = closestItemSource.src.replace(colorRegEx, radioItemValue);
+    
+    closestVideoElement.pause()
+    closestItemSource.src = newVideoSource
+    closestVideoElement.load()
+    closestVideoElement.play();
 }
 
-function switchColorTwo(e) {
-    if (e.target.value === 'Kuro') {
-        itemVideos[1].pause();
-        itemSources[1].src = 'assets/images/products-animated/beanie-cycloneV1-K.webm';
-        itemVideos[1].load();
-        itemVideos[1].play();
-    } else if (e.target.value === 'Mashumaro') {
-        itemVideos[1].pause();
-        itemSources[1].src = 'assets/images/products-animated/beanie-cycloneV1-M.webm';
-        itemVideos[1].load();
-        itemVideos[1].play();
-    } else if (e.target.value === 'Sora') {
-        itemVideos[1].pause();
-        itemSources[1].src = 'assets/images/products-animated/beanie-cycloneV1-S.webm';
-        itemVideos[1].load();
-        itemVideos[1].play();
-    }
-}
-
-function switchColorThree(e) {
-    if (e.target.value === 'Kuro') {
-        itemVideos[2].pause();
-        itemSources[2].src = 'assets/images/products-animated/socks-cyclone-K.webm';
-        itemVideos[2].load();
-        itemVideos[2].play();
-    } else if (e.target.value === 'Mashumaro') {
-        itemVideos[2].pause();
-        itemSources[2].src = 'assets/images/products-animated/socks-cyclone-M.webm';
-        itemVideos[2].load();
-        itemVideos[2].play();
-    } else if (e.target.value === 'Sora') {
-        itemVideos[2].pause();
-        itemSources[2].src = 'assets/images/products-animated/socks-cyclone-S.webm';
-        itemVideos[2].load();
-        itemVideos[2].play();
-    }
-}
-
-itemOneRadios.forEach(radio => {
-    radio.addEventListener('click', switchColor);
-});
-
-itemTwoRadios.forEach(radio => {
-    radio.addEventListener('click', switchColorTwo);
-});
-
-itemThreeRadios.forEach(radio => {
-    radio.addEventListener('click', switchColorThree);
-});
+colorRadios.forEach(radio => {
+    radio.addEventListener('click', switchItemColor)
+})
