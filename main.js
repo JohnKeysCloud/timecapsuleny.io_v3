@@ -1,4 +1,4 @@
-const colorRadios = document.querySelectorAll('input[type="radio"]');
+const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
 
 function switchItemColor(e) {
     let itemColorRegEx = /(?<=\[)(.*?)(?=\])/g;
@@ -16,6 +16,6 @@ function switchItemColor(e) {
     closestVideoElement.play();
 }
 
-colorRadios.forEach(radio => {
+COLOR_RADIOS.forEach(radio => {
     radio.addEventListener('click', switchItemColor)
 })
