@@ -220,12 +220,27 @@ main {
 .item-card .item {
     background: #fffce8;
     border-radius: 42%;
-    box-shadow: inset -11px 11px 22px #d9d6c5,
-            inset 11px -11px 22px #ffffff;
+    box-shadow: inset 8px 8px 16px #a6a497, inset -8px -8px 16px #FFFCE8;
     display: grid;
     margin-bottom: 11px;
     margin-inline: auto;
     place-items: center;
+    position: relative;
+}
+
+.item-card .item::before {
+    box-shadow: inset -11px 11px 15px #d9d6c5, inset 11px -11px 15px #FFFCE8;
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 380ms ease-in-out;
+    width: 100%;
+}
+
+.item-card:hover .item::before {
+    opacity: 1;
 }
 
 .item-card .item video {
@@ -238,12 +253,12 @@ main {
 }
 
 .item-card .item video:hover {
-    -webkit-animation-delay: 0s, .3s;
-    animation-delay: 0s, .3s;
+    -webkit-animation-delay: 0s, .2s;
+    animation-delay: 0s, .2s;
     -webkit-animation-direction: normal, alternate;
     animation-direction: normal, alternate;
-    -webkit-animation-duration: .3s, 1.5s;
-    animation-duration: .3s, 1.5s;
+    -webkit-animation-duration: .2s, 0.8s;
+    animation-duration: .s, 0.8s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     -webkit-animation-iteration-count: 1, infinite;
