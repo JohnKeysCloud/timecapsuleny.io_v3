@@ -17,5 +17,5 @@ function switchItemColor(e) {
 }
 
 COLOR_RADIOS.forEach(radio => {
-    radio.addEventListener('click', switchItemColor)
+    radio.addEventListener('click', switchItemColor);
 })
