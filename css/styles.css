@@ -189,7 +189,7 @@ header {
 }
 
 header #header-logo {
-    object-fit: contain;
+    object-fit: scale-down;
     width: min(300px, 38vw);
 }
 
