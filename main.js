@@ -1,19 +1,18 @@
 const colorRadios = document.querySelectorAll('input[type="radio"]');
-console.log(colorRadios);
 
 function switchItemColor(e) {
+    let itemColorRegEx = /(?<=\[)(.*?)(?=\])/g;
     let radioItemValue = e.target.value; 
+    let closestVideoElement = e.target.closest('.item-card').querySelector('.item-source').parentElement;
 
-    let closestItemCard = (e.target.closest('.item-card'));
-    let closestItemSource = closestItemCard.querySelector('.item-source');
-    let closestVideoElement = closestItemSource.parentElement;
+    let closestItemSources = e.target.closest('.item-card').querySelectorAll('.item-source');
+    let newHVECItemSource = closestItemSources[0].src.replaceAll(itemColorRegEx, radioItemValue);
+    let newWebMItemSource = closestItemSources[1].src.replaceAll(itemColorRegEx, radioItemValue);
 
-    let colorRegEx = /(?<=\_)(.*?)(?=\.)/;
-    let newVideoSource = closestItemSource.src.replace(colorRegEx, radioItemValue);
-    
-    closestVideoElement.pause()
-    closestItemSource.src = newVideoSource
-    closestVideoElement.load()
+    closestVideoElement.pause();
+    closestItemSources[0].src = newHVECItemSource;
+    closestItemSources[1].src = newWebMItemSource;
+    closestVideoElement.load();
     closestVideoElement.play();
 }
 

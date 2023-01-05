@@ -439,8 +439,6 @@ main {
     position: absolute;
 }
 
-
-
 @media only screen and (min-width: 735px) {
     .item-list {
         gap: 55px;
