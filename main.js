@@ -2,16 +2,17 @@ const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
 
 function switchItemColor(e) {
     let itemColorRegEx = /(?<=\[)(.*?)(?=\])/g;
-    let radioItemValue = e.target.value; 
+    let radioValue = e.target.value; 
     let closestVideoElement = e.target.closest('.item-card').querySelector('.item-source').parentElement;
-
     let closestItemSources = e.target.closest('.item-card').querySelectorAll('.item-source');
-    let newHVECItemSource = closestItemSources[0].src.replaceAll(itemColorRegEx, radioItemValue);
-    let newWebMItemSource = closestItemSources[1].src.replaceAll(itemColorRegEx, radioItemValue);
+    let currentItemColor = closestItemSources[0].src.match(itemColorRegEx)[0];
 
+    if (radioValue === currentItemColor) return;
     closestVideoElement.pause();
-    closestItemSources[0].src = newHVECItemSource;
-    closestItemSources[1].src = newWebMItemSource;
+    closestItemSources.forEach(source => {
+        let newSource = source.src.replaceAll(itemColorRegEx, radioValue);
+        source.src = newSource;
+    });
     closestVideoElement.load();
     closestVideoElement.play();
 }

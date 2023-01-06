@@ -144,6 +144,35 @@
     }
 }
 
+@-webkit-keyframes rotateRadioChecked {
+    from {
+        -webkit-transform: scale(1.07) rotate(0);
+        transform: scale(1.07) rotate(0);
+    }
+    50% {
+        -webkit-transform: scale(1.21) rotate(180deg);
+        transform: scale(1.21) rotate(180deg);
+    }
+    to {
+        -webkit-transform: scale(1.07) rotate(360deg);
+        transform: scale(1.07) rotate(360deg);
+    }
+}
+@keyframes rotateRadioChecked {
+    from {
+        -webkit-transform: scale(1.07) rotate(0);
+        transform: scale(1.07) rotate(0);
+    }
+    50% {
+        -webkit-transform: scale(1.21) rotate(180deg);
+        transform: scale(1.21) rotate(180deg);
+    }
+    to {
+        -webkit-transform: scale(1.07) rotate(360deg);
+        transform: scale(1.07) rotate(360deg);
+    }
+}
+
 @font-face {
     font-family: 'Gosha Sans Regular';
     src: url(../fonts/GoshaSansRegular.otf);
@@ -153,7 +182,7 @@
     -webkit-background-clip: initial;
     -webkit-text-fill-color: initial;
     background-clip: initial;
-    background-color: skyblue;
+    background-color: var(--color-sora);
     color: white;
 
 }
@@ -168,7 +197,11 @@
     --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
     --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 
-    --background-sora: linear-gradient(to bottom, #fcf4c7, #fffce8, rgb(45, 191, 248));
+    --background-sora: linear-gradient(to bottom, #fcf4c7, #fffce8, var(--color-sora));
+
+    --color-kuro: black;
+    --color-mashumaro: #f0eae0;
+    --color-sora: skyblue;
 }
 
 body {
@@ -258,7 +291,7 @@ main {
     -webkit-animation-direction: normal, alternate;
     animation-direction: normal, alternate;
     -webkit-animation-duration: .2s, 0.8s;
-    animation-duration: .s, 0.8s;
+    animation-duration: .2s, 0.8s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     -webkit-animation-iteration-count: 1, infinite;
@@ -305,11 +338,11 @@ main {
     opacity: 1;
 }
 
-.item-card .radio-container .radio .radio-color {
+.item-card .radio-color {
     appearance: none;
     background: linear-gradient(145deg, #e6e3d1, #fffff8); 
     border-radius: inherit;
-    box-shadow: 11px 11px 24px #b5b3a5, -11px -11px 24px #ffffff;
+    box-shadow: 3px 3px 11px #b5b3a5, -11px -11px 15px #ffffff;
     height: 30px;
     margin: 0;
     position: relative;
@@ -324,34 +357,39 @@ main {
     position: absolute;
     transform: scale(0.7);
     transition: transform 0.88s cubic-bezier(0.84, 0.2, 0.95, 0.37);
+    z-index: 1;
 }
 
 .item-card .color-one::before {
-    background-color: black;
+    background-color: var(--color-kuro);
 }
 
 .item-card .color-two::before {
-    background-color: #FFFCEF ;
+    background-color: var(--color-mashumaro);
+    box-shadow: inset 0 0 3px black;
 
 }
 
 .item-card .color-three::before {
-    background-color: skyblue ;
+    background-color: var(--color-sora);
 }
 
 .item-card .radio-color::after {
+    animation: 3s rotateRadioChecked ease-out infinite;
     border-radius: inherit;
-    box-shadow: 0 0 11px 2px rgb(145, 145, 145);
+    border-top: 5px ridge var(--color-sora);
+    box-shadow: 0 0 11px 8px #FFFCEF, inset 0 0 33px 8px silver;
     content: '';
-    opacity: 0;
     inset: 0;
+    opacity: 0;
     position: absolute;
-    transform: scale(1);
-    transition: opacity 380ms ease-in-out;
+    transition: all 380ms ease-in-out;
+    z-index: -1;
 }
 
 .item-card .radio-color:checked:after {
     opacity: 1;
+    transform: scale(1.2);
 }
 
 .item-card .radio-color:checked ~ .label-container {
@@ -363,6 +401,7 @@ main {
     opacity: 0;
     position: absolute;
     transition: transform 1.11s cubic-bezier(0.84, 0.2, 0.95, 0.37), opacity 380ms ease-in-out;
+    z-index: 0;
 }
 
 .item-card .label-container span {
@@ -462,7 +501,7 @@ main {
     }
 
     .item-card .radio-color::before {
-        transform: scale(0.5);
+        transform: scale(0.48);
     }
 
     .item-card .label-container {
