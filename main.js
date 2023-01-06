@@ -10,7 +10,7 @@ function switchItemColor(e) {
     if (radioValue === currentItemColor) return;
     closestVideoElement.pause();
     closestItemSources.forEach(source => {
-        let newSource = source.src.replaceAll(itemColorRegEx, radioValue);
+        let newSource = source.getAttribute('src').replaceAll(itemColorRegEx, radioValue);
         source.setAttribute('src', newSource);
     });
     closestVideoElement.load();
