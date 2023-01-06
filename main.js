@@ -11,7 +11,7 @@ function switchItemColor(e) {
     closestVideoElement.pause();
     closestItemSources.forEach(source => {
         let newSource = source.src.replaceAll(itemColorRegEx, radioValue);
-        source.src = newSource;
+        source.setAttribute('src', newSource);
     });
     closestVideoElement.load();
     closestVideoElement.play();
