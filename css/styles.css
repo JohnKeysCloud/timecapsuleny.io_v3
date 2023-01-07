@@ -226,7 +226,7 @@ header {
 
 header #header-logo {
     object-fit: scale-down;
-    width: min(300px, 38vw);
+    width: min(300px, 50vw);
 }
 
 main {
@@ -246,7 +246,6 @@ main {
 .item-card {
     padding: 11px;
     text-align: center;
-    /* width: 100%; */
 }
 
 .item-card-no-color {
