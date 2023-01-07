@@ -94,7 +94,6 @@
         transform: rotate(360deg);
     }
 }
-
 @keyframes rotate360Small {
     to {
         -webkit-transform: rotate(360deg);
@@ -104,43 +103,43 @@
 
 @-webkit-keyframes rotate360Medium {
     from {
-        -webkit-transform: scale(0.77) rotate(0deg);
-        transform: scale(0.77) rotate(0deg);
+        -webkit-transform: scale(0.75) rotate(0deg);
+        transform: scale(0.75) rotate(0deg);
     }
     to {
-        -webkit-transform: scale(0.77) rotate(0deg);
-        transform: scale(0.77) rotate(360deg);
+        -webkit-transform: scale(0.75) rotate(0deg);
+        transform: scale(0.75) rotate(360deg);
     }
 }
 @keyframes rotate360Medium {
     from {
-        -webkit-transform: scale(0.77) rotate(0);
-        transform: scale(0.77) rotate(0);
+        -webkit-transform: scale(0.75) rotate(0);
+        transform: scale(0.75) rotate(0);
     }
     to {
-        -webkit-transform: scale(0.77) rotate(360deg);
-        transform: scale(0.77) rotate(360deg);
+        -webkit-transform: scale(0.75) rotate(360deg);
+        transform: scale(0.75) rotate(360deg);
     }
 }
 
 @-webkit-keyframes rotate360Large {
     from {
-        -webkit-transform: scale(1) rotate(0);
-        transform: scale(1) rotate(0);
+        -webkit-transform: scale(0.88) rotate(0);
+        transform: scale(0.88) rotate(0);
     }
     to {
-        -webkit-transform: scale(1) rotate(360deg);
-        transform: scale(1) rotate(360deg);
+        -webkit-transform: scale(0.88) rotate(360deg);
+        transform: scale(0.88) rotate(360deg);
     }
 }
 @keyframes rotate360Large {
     from {
-        -webkit-transform: scale(1) rotate(0);
-        transform: scale(1) rotate(0);
+        -webkit-transform: scale(0.88) rotate(0);
+        transform: scale(0.88) rotate(0);
     }
     to {
-        -webkit-transform: scale(1) rotate(360deg);
-        transform: scale(1) rotate(360deg);
+        -webkit-transform: scale(0.88) rotate(360deg);
+        transform: scale(0.88) rotate(360deg);
     }
 }
 
@@ -238,7 +237,7 @@ main {
 
 .item-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     list-style: none;
     place-items: center;
 }
@@ -246,6 +245,7 @@ main {
 .item-card {
     padding: 11px;
     text-align: center;
+    width: min(50vw, 300px);
 }
 
 .item-card-no-color {
@@ -263,19 +263,19 @@ main {
     position: relative;
 }
 
-.item-card .item::before {
+.item-card .item::after {
     box-shadow: inset -11px 11px 15px #d9d6c5, inset 11px -11px 15px #FFFCE8;
     border-radius: inherit;
     content: '';
     height: 100%;
     opacity: 0;
     position: absolute;
-    -webkit-transition: opacity 380ms ease-in-out;
-    transition: opacity 380ms ease-in-out;
+    -webkit-transition: opacity 188ms ease-in-out;
+    transition: opacity 188ms ease-in-out;
     width: 100%;
 }
 
-.item-card:hover .item::before {
+.item-card:hover .item::after {
     opacity: 1;
 }
 
@@ -485,25 +485,29 @@ footer p {
     font-size: 0.75rem;
 }
 
-@media only screen and (min-width: 735px) {
+@media only screen and (min-width: 768px) {
     .item-list {
-        gap: 55px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding-inline: 8vw;
+        gap: 33px;
+        grid-template-columns: repeat(3, 1fr);
+        padding-inline: 3vw;
     } 
+
+    .item-card {
+        width: min(25vw, 300px);
+    }
 
     .item-card .item {
         margin-bottom: 25px;
     }
 
     .item-card .radio-container .radio .radio-color {
-        height: 55px;
-        width: 55px;
+        height: min(64px, 5.8vw);
+        width: min(64px, 5.8vw);
     }
 
     .item-card .radio-color::before {
-        -webkit-transform: scale(0.48);
-        transform: scale(0.48);
+        -webkit-transform: scale(0.40);
+        transform: scale(0.40);
     }
 
     .item-card .label-container {
@@ -517,12 +521,7 @@ footer p {
 
 @media only screen and (min-width: 1024px) {
     .item-list {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .item-card .radio-container .radio .radio-color {
-        height: 70px;
-        width: 70px;
+        padding-inline: 11vw;
     }
 
     .item-card .radio-color::before {
