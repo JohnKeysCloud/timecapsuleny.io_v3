@@ -207,6 +207,9 @@
 body {
     background: var(--background-sora);
     color: #575757;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: 'Space Mono', monospace;
     font-size: var(--fs-body);
     line-height: 1.5;
@@ -268,6 +271,7 @@ main {
     height: 100%;
     opacity: 0;
     position: absolute;
+    -webkit-transition: opacity 380ms ease-in-out;
     transition: opacity 380ms ease-in-out;
     width: 100%;
 }
@@ -278,10 +282,13 @@ main {
 
 .item-card .item video {
     border-radius: inherit;
+    height: 100%;
+    width: 100%;
     max-width: 100%;
     object-fit: cover;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    -webkit-transition: all 380ms ease-in-out;
     transition: all 380ms ease-in-out;
 }
 
@@ -355,7 +362,9 @@ main {
     content: '';
     inset: 0;
     position: absolute;
+    -webkit-transform: scale(0.7);
     transform: scale(0.7);
+    -webkit-transition: transform 0.88s cubic-bezier(0.84, 0.2, 0.95, 0.37);
     transition: transform 0.88s cubic-bezier(0.84, 0.2, 0.95, 0.37);
     z-index: 1;
 }
@@ -389,6 +398,7 @@ main {
 
 .item-card .radio-color:checked:after {
     opacity: 1;
+    -webkit-transform: scale(1.2);
     transform: scale(1.2);
 }
 
@@ -400,6 +410,7 @@ main {
     animation: rotate360Small 33s linear infinite;
     opacity: 0;
     position: absolute;
+    -webkit-transition: transform 1.11s cubic-bezier(0.84, 0.2, 0.95, 0.37), opacity 380ms ease-in-out;
     transition: transform 1.11s cubic-bezier(0.84, 0.2, 0.95, 0.37), opacity 380ms ease-in-out;
     z-index: 0;
 }
@@ -411,38 +422,49 @@ main {
     height: 35px;
     top: -35px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 15px;
+    -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
 }
 .item-card .label-container span:first-of-type {
     top: -34px;
 }
 .item-card .label-container span:nth-of-type(2) {
+    -webkit-transform: translateX(-50%) rotate(25deg);
     transform: translateX(-50%) rotate(25deg);
 }
 .item-card .label-container span:nth-of-type(3) {
+    -webkit-transform: translateX(-50%) rotate(50deg);
     transform: translateX(-50%) rotate(50deg);
 }
 .item-card .label-container span:nth-of-type(4) {
+    -webkit-transform: translateX(-50%) rotate(75deg);
     transform: translateX(-50%) rotate(75deg);
 }
 .item-card .label-container span:nth-of-type(5) {
+    -webkit-transform: translateX(-50%) rotate(100deg);
     transform: translateX(-50%) rotate(100deg);
 }
 .item-card .label-container span:nth-of-type(6) {
+    -webkit-transform: translateX(-50%) rotate(125deg);
     transform: translateX(-50%) rotate(125deg);
 }
 .item-card .label-container span:nth-of-type(7) {
+    -webkit-transform: translateX(-50%) rotate(150deg);
     transform: translateX(-50%) rotate(150deg);
 }
 .item-card .label-container span:nth-of-type(8) {
+    -webkit-transform: translateX(-50%) rotate(175deg);
     transform: translateX(-50%) rotate(175deg);
 }
 .item-card .label-container span:nth-of-type(9) {
+    -webkit-transform: translateX(-50%) rotate(200deg);
     transform: translateX(-50%) rotate(200deg);
 }
 .item-card .label-container span:nth-of-type(10) {
+    -webkit-transform: translateX(-50%) rotate(225deg);
     transform: translateX(-50%) rotate(225deg);
 }
 
@@ -453,35 +475,12 @@ main {
     margin-bottom: 25px;
 }
 
-.the-wonder-kid-item {
-    overflow: hidden;
-    position: relative;
-}
-
-.the-wonder-kid-item video {
-    visibility: hidden;
-}
-
-.the-wonder-kid {
-    -webkit-animation-delay: 0s, .5s;
-    animation-delay: 0s, .6s;
-    -webkit-animation-direction: normal, alternate;
-    animation-direction: normal, alternate;
-    -webkit-animation-duration: .5s, 1.5s;
-    animation-duration: .5s, 1.5s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-iteration-count: 1, infinite;
-    animation-iteration-count: 1, infinite;
-    -webkit-animation-name: hvr-icon-bob-float-2, hvr-icon-bob-2;
-    animation-name: hvr-icon-bob-float-2, hvr-icon-bob-2;
-    -webkit-animation-timing-function: ease-out, ease-in-out;
-    animation-timing-function: ease-out, ease-in-out;
-    background: url('../assets/images/logos/theWonderKid.png') center / cover no-repeat;
-    border-radius: inherit;
-    box-shadow: inset 0 0 11px 15px black;
-    inset: 0;
-    position: absolute;
+footer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+    padding-top: 50px;
 }
 
 @media only screen and (min-width: 735px) {
@@ -501,6 +500,7 @@ main {
     }
 
     .item-card .radio-color::before {
+        -webkit-transform: scale(0.48);
         transform: scale(0.48);
     }
 
@@ -524,6 +524,7 @@ main {
     }
 
     .item-card .radio-color::before {
+        -webkit-transform: scale(0.5);
         transform: scale(0.5);
     }
 
