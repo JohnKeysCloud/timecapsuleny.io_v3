@@ -518,7 +518,7 @@ footer p {
 
 @media only screen and (min-width: 1024px) {
     main .item-list {
-        padding-inline: 11vw;
+        padding-inline: 15vw;
     }
 
     main .item-card .radio-color::before {
