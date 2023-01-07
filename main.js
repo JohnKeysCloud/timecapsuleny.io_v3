@@ -3,7 +3,6 @@ const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
 function setTempDimensions(e) {
     let targetedItemContainer = e.target.closest('.item-card').firstElementChild;
     let width = targetedItemContainer.offsetWidth;
-    console.log(width)
 
     targetedItemContainer.style.height = `${width}px`;
     targetedItemContainer.style.width = `${width}px`;
