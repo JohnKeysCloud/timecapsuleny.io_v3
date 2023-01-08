@@ -364,7 +364,6 @@ body {
 }
 
 #cloud-encapsulator {
-    border: 2px solid red;
     display: grid;
     inset: 0;
     overflow: hidden;
@@ -382,7 +381,6 @@ body {
 } */
 
 #cloud-encapsulator #cloud {
-    border: 2px solid red;
     animation: cloudDriftOne 2s ease-in-out linear;
     height:555px;
     width: 555px;
@@ -807,8 +805,6 @@ main .item-card .label-container span:nth-of-type(10) {
 }
 
 main .item-card .item-price {
-    /* border: 1px solid red; */
-
     color: var(--color-text-primary);
     margin-bottom: 25px;
 }
