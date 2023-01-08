@@ -1,8 +1,10 @@
 const navButton = document.querySelector('#nav-btn');
+const nav = document.querySelector('#nav-list');
 const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
 
 function toggleNav(e) {
     navButton.classList.toggle('open');
+    nav.classList.toggle('open');
 }
 
 function driftCloud(e) {
