@@ -397,6 +397,7 @@ body {
 }
 
 header {
+    margin-bottom: 33px;
     padding-inline: 5vw;
     padding-top: 11px;
 }
