@@ -1,4 +1,17 @@
+const navButton = document.querySelector('#nav-btn');
 const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
+
+function toggleNav(e) {
+    navButton.classList.toggle('open');
+}
+
+function driftCloud(e) {
+    const cloudOne = document.getElementById('cloud');
+    const x = e.clientX;
+    const y = e.clientY;
+
+    cloudOne.style.transform = `translate(${x - 500}px, ${y - 500}px)`;
+}
 
 function setTempDimensions(e) {
     let targetedItemContainer = e.target.closest('.item-card').firstElementChild;
@@ -42,3 +55,6 @@ function switchItemColor(e) {
 COLOR_RADIOS.forEach(radio => {
     radio.addEventListener('click', switchItemColor);
 })
+
+navButton.addEventListener('click', toggleNav);
+window.addEventListener('mousemove', driftCloud);

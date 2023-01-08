@@ -1,3 +1,97 @@
+/* * Lucky Numbers in Japan pressStart */
+@-webkit-keyframes navCloudDrift {
+    30% {
+        -webkit-transform: translateX(-800px) translateY(-88px);
+        transform: translateX(-800px) translateY(-88px);
+    }
+    50% {
+        -webkit-transform: translateX(-800px) translateY(88px);
+        transform: translateX(-800px) translateY(88px);
+    }
+    70% {
+        -webkit-transform: translateX(-800px) translateY(-88px);
+        transform: translateX(-800px) translateY(-88px);
+    }
+    80% {
+        -webkit-transform: translateX(0px) translateY(88px);
+        transform: translateX(0px) translateY(88px);
+    }
+}
+@keyframes navCloudDrift {
+    30% {
+        -webkit-transform: translateX(-800px) translateY(-88px);
+        transform: translateX(-800px) translateY(-88px);
+    }
+    50% {
+        -webkit-transform: translateX(-800px) translateY(88px);
+        transform: translateX(-800px) translateY(88px);
+    }
+    70% {
+        -webkit-transform: translateX(-800px) translateY(-88px);
+        transform: translateX(-800px) translateY(-88px);
+    }
+    80% {
+        -webkit-transform: translateX(0px) translateY(88px);
+        transform: translateX(0px) translateY(88px);
+    }
+}
+
+/* * Lucky Numbers in Japan pressStart */
+@-webkit-keyframes cloudRotate {
+    from {
+        -webkit-transform: rotate(33deg);
+        transform: rotate(33deg);
+    }
+    50% {
+        -webkit-transform: rotate(-33deg);
+        transform: rotate(-33deg);
+    }
+    to {
+        -webkit-transform: rotate(33deg);
+        transform: rotate(33deg);
+    }
+}
+@keyframes cloudRotate {
+    from {
+        -webkit-transform: rotate(33deg);
+        transform: rotate(33deg);
+    }
+    50% {
+        -webkit-transform: rotate(-33deg);
+        transform: rotate(-33deg);
+    }
+    to {
+        -webkit-transform: rotate(33deg);
+        transform: rotate(33deg);
+    }
+}
+/* * Lucky Numbers in Japan gameOver */
+
+@-webkit-keyframes navExpand {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes navExpand {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
 @-webkit-keyframes hvr-icon-bob {
     0% {
         -webkit-transform: translateY(-8px);
@@ -172,6 +266,50 @@
     }
 }
 
+/* Icon Hang pressStart */
+@-webkit-keyframes hvr-icon-hang {
+    0% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+    50% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+}
+@keyframes hvr-icon-hang {
+    0% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+    50% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+}
+
+@-webkit-keyframes hvr-icon-hang-sink {
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+}
+@keyframes hvr-icon-hang-sink {
+    100% {
+        -webkit-transform: translateY(6px);
+        transform: translateY(6px);
+    }
+}
+/* Icon Hang gameOver */
+
 @font-face {
     font-family: 'Gosha Sans Regular';
     src: url(../fonts/GoshaSansRegular.otf);
@@ -196,46 +334,242 @@
     --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
     --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 
-    --background-sora: linear-gradient(to bottom, #fcf4c7, #fffce8, var(--color-sora));
+
+    /* ! get radio box shadow here for each mode; */
+
+    --background-day: linear-gradient(to bottom, #fcf4c7, #fffce8, var(--color-sora));
+    /* --background-day: black; */
+    --radio-box-shadow-day: -11px -11px 15px #ffffff;
+    /* --radio-box-shadow-day: -8px -8px 5px black; */
+
+
 
     --color-kuro: black;
     --color-mashumaro: #f0eae0;
     --color-sora: skyblue;
+
+    --color-text-primary: #575757;
 }
 
 body {
-    background: var(--background-sora);
-    color: #575757;
+    background: var(--background-day);
+    color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     font-family: 'Space Mono', monospace;
     font-size: var(--fs-body);
+    justify-content: space-between;
     line-height: 1.5;
     margin: 0;
 }
 
+#cloud-encapsulator {
+    display: grid;
+    inset: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    place-items: center;
+    position: absolute;
+}
+
+/* TODO: */
+/* @keyframes cloudDriftOne {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(50%);
+    }   
+} */
+
+#cloud-encapsulator #cloud {
+    animation: cloudDriftOne 2s ease-in-out linear;
+    width: 555px;
+    -webkit-transition: all 1.8s ease-out;
+    transition: all 1.8s ease-out;
+}
+
+#cloud-encapsulator #cloud > * {
+    -webkit-animation: cloudRotate 33s linear infinite alternate;
+    animation: cloudRotate 33s linear infinite alternate;
+    object-fit: scale-down;
+    z-index: 1;
+}
+
 header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 33px;
     padding-inline: 5vw;
     padding-top: 11px;
 }
 
-header #header-logo {
-    object-fit: scale-down;
-    width: min(300px, 50vw);
+header #header-top {
+    display: flex;
+    justify-content: space-between;
 }
 
-/* main {
-    
+header #header-logo {
+    object-fit: scale-down;
+    position: relative;
+    width: min(300px, 50vw);
+    z-index: 1;
+}
+
+#nav-btn {
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    padding: 5px;
+    transition: 380ms transform ease-in-out;
+    width: 55px;
+    z-index: 1;
+}
+
+#nav-btn:hover {
+    transform: scale(1.1);
+}
+
+#nav-btn-san {
+    background: var(--color-text-primary);
+    border-radius: 8px;
+    box-shadow: 0 0 8px var(--color-mashumaro);
+    display: flex;
+    height: 3px;
+    justify-content: center;
+    -webkit-transition: all 380ms ease-in-out;
+    transition: all 380ms ease-in-out;
+    width: 20px;
+}
+
+#nav-btn-san::before {
+    background: var(--color-text-primary);
+    border-radius: 3px;
+    box-shadow: 0 0 8px var(--color-sora);
+    content: '';
+    height: 3px;
+    position: absolute;
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    width: 28px;
+}
+
+#nav-btn-san::after {
+    background: var(--color-text-primary);
+    border-radius: 3px;
+    box-shadow: 0 0 8px var(--color-sora);
+    content: '';
+    height: 3px;
+    position: absolute;
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+    width: 33px;
+}
+
+/* NAV-BTN ANIMATION pressStart */
+#nav-btn.open #nav-btn-san {
+    background: transparent;
+    box-shadow: none;
+    -webkit-transition: all 380ms ease-out;
+    transition: all 380ms ease-out;
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+}
+
+#nav-btn.open #nav-btn-san::before {
+    opacity: 0.8;
+    -webkit-transform: rotate(405deg);
+    transform: rotate(405deg);
+    -webkit-transition: all 380ms ease-in-out;
+    transition: all 380ms ease-in-out;
+    width: 33px;
+}
+
+#nav-btn.open #nav-btn-san::after {
+    opacity: 0.8;
+    -webkit-transform: rotate(-405deg);
+    transform: rotate(-405deg);
+    transition: all 380ms ease-in-out;
+    -webkit-transition: all 380ms ease-in-out;
+    width: 33px;
+}
+
+header:has(#nav-btn.open) #nav-list {
+    animation: navExpand 1s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    transform-origin: top center;
+}
+/* NAV-BTN ANIMATION gameOver */
+
+/* TODO: */
+/* * NAV ANCHOR ANIMATION pressStart */
+/* !WHAT TO DO
+? add an animation that will rotate the even/odd  list anchor elemnts to maybe -3deg and 3deg respectively
+! */
+
+/* 
+#nav-list li:nth {
+    transition: all 3s ease-in-out;
 } */
+/* * NAV ANCHOR ANIMATION gameOver */
+
+
+header:has(#nav-btn.open) #nav-list li:nth-of-type(odd) {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+header:has(#nav-btn.open) #nav-list li:nth-of-type(even) {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+
+nav #nav-list {
+    display: none;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    gap: 38px;
+    padding-top: 25px;
+    margin-bottom: 33px;
+    margin-inline: auto;
+    text-align: center;
+    -webkit-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+}
+
+#nav-list a {
+    color: var(--color-sora);
+    font-family: 'Dynapuff', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 0 8px black;
+}
+
+#nav-list li:first-of-type a::before {
+    -webkit-animation: navCloudDrift 33s linear infinite alternate;
+    animation: navCloudDrift 33s linear infinite alternate;
+    content: url('../assets/images/cloud/cloud.svg');
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+} 
+
+main {
+    display: grid;
+    place-items: center;
+}
 
 main .item-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none;
+    overflow-x: hidden;
     place-items: center;
 }
 
@@ -243,6 +577,7 @@ main .item-card {
     padding: 11px;
     text-align: center;
     width: min(50vw, 300px);
+    z-index: 1;
 }
 
 main .item-card-no-color {
@@ -314,7 +649,7 @@ main .item-three-video:not(:first-of-type) {
 }
 
 main .item-card .item-title {
-    color: #575757;
+    color: var(--color-text-primary);
     font-size: var(--fs-h1);
     font-weight: bold;
     margin-bottom: 25px;
@@ -347,7 +682,7 @@ main .item-card .radio-color {
     appearance: none;
     background: linear-gradient(145deg, #e6e3d1, #fffff8); 
     border-radius: inherit;
-    box-shadow: 3px 3px 11px #b5b3a5, -11px -11px 15px #ffffff;
+    box-shadow: 3px 3px 11px #b5b3a5, var(--radio-box-shadow-day);
     height: 30px;
     margin: 0;
     position: relative;
@@ -414,7 +749,7 @@ main .item-card .label-container {
 }
 
 main .item-card .label-container span {
-    color:#575757;
+    color:var(--color-text-primary);
     position: absolute;
     display: inline-block;
     height: 35px;
@@ -469,7 +804,7 @@ main .item-card .label-container span:nth-of-type(10) {
 main .item-card .item-price {
     /* border: 1px solid red; */
 
-    color: #575757;
+    color: var(--color-text-primary);
     margin-bottom: 25px;
 }
 
@@ -478,6 +813,7 @@ footer {
     display: flex;
     justify-content: center;
     padding-block: 25px;
+    z-index: 2;
 }
 
 footer p {

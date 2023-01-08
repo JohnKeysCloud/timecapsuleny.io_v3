@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Noto+Sans+JP:wght@100;400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/cyclone-reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="assets/images/logos/c.gif" type="image/gif">
@@ -16,19 +16,30 @@
 </head>
 
 <body>
+    <div id="cloud-encapsulator">
+        <div id="cloud">
+            <img src="assets/images/cloud/cloud.svg" alt="Cloud">
+        </div>
+    </div>
     <header>
-        <a href="index.html">
-            <img id="header-logo" src="assets/images/logos/headerLogo.webp" alt="Time Capsule NY">
-        </a>
-
-        <!-- <nav>
-			<ul>
-				<li>Home</li>
-				<li>Shop</li>
-				<li>About</li>
-				<li>Contact</li>
+        <div id="header-top">
+            <a href="index.html">
+                <img id="header-logo" src="assets/images/logos/headerLogo.webp" alt="Time Capsule NY">
+            </a>
+            <button id="nav-btn" aria-label="Navigation Toggle">
+                <div id="nav-btn-san">
+                    <!-- injected via css -->
+                </div>
+            </button>
+        </div>
+        <nav>
+			<ul id="nav-list">
+				<li><a href="index.html" class="nav-link">home</a></li>
+				<li><a href="#" class="nav-link">about</a></li>
+				<li><a href="#" class="nav-link">shop</a></li>
+				<li><a href="#" class="nav-link">encapsulation</a></li>
 			</ul>
-		</nav> -->
+		</nav>
     </header>
     <main>
         <ul class="item-list">
