@@ -569,7 +569,7 @@ main .item-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     place-items: center;
 }
 
