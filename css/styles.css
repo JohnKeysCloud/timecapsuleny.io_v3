@@ -364,10 +364,10 @@ body {
 }
 
 #cloud-encapsulator {
+    border: 2px solid red;
     display: grid;
     inset: 0;
     overflow: hidden;
-    place-items: center;
     position: absolute;
 }
 
@@ -382,8 +382,12 @@ body {
 } */
 
 #cloud-encapsulator #cloud {
+    border: 2px solid red;
     animation: cloudDriftOne 2s ease-in-out linear;
+    height:555px;
     width: 555px;
+    justify-self: left;
+    align-self: top;
     -webkit-transition: all 1.8s ease-out;
     transition: all 1.8s ease-out;
 }
