@@ -367,7 +367,7 @@ body {
     display: grid;
     inset: 0;
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow: hidden;
     place-items: center;
     position: absolute;
 }
