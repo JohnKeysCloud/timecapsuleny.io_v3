@@ -366,7 +366,6 @@ body {
 #cloud-encapsulator {
     display: grid;
     inset: 0;
-    max-width: 100vw;
     overflow: hidden;
     place-items: center;
     position: absolute;
