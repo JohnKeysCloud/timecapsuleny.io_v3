@@ -1,18 +1,48 @@
 const navButton = document.querySelector('#nav-btn');
 const navList = document.querySelector('#nav-list');
 const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
-
-function toggleNav() {
-    navButton.classList.toggle('open');
-    navList.classList.toggle('open');
-}
+const cloudOne = document.getElementById('cloud');
 
 function driftCloud(e) {
-    const cloudOne = document.getElementById('cloud');
     const x = e.clientX;
     const y = e.clientY;
 
     cloudOne.style.transform = `translate(${x - 500}px, ${y - 500}px)`;
+}
+
+function hideCloudOne() {
+    cloudOne.classList.toggle('hide-cloud');
+    cloudOne.addEventListener('animationend', () => {
+        cloudOne.classList.toggle('hide-cloud');
+        cloudOne.style.display = 'none';
+        window.removeEventListener('mousemove', driftCloud);
+    });
+
+}
+
+function showCloudOne() {
+    console.log(1)
+    cloudOne.style.display = 'block';
+    cloudOne.style.animation = 'none';
+    window.addEventListener('mousemove', driftCloud);
+
+    cloudOne.classList.toggle('show-cloud');
+    cloudOne.addEventListener('animationend', () => {
+        cloudOne.classList.toggle('show-cloud');
+        cloudOne.style.animation = 'cloudDriftOne 2s ease-in-out linear';
+    });
+}
+
+function toggleNav() {
+    navButton.classList.toggle('open');
+    navList.classList.toggle('open');
+
+    console.log(navList.classList.contains('open'));
+    if (navList.classList.contains('open')) {
+        hideCloudOne();
+    } else {
+        showCloudOne();
+    }
 }
 
 function setTempDimensions(e) {

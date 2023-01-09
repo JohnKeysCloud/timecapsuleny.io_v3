@@ -1,3 +1,71 @@
+
+@-webkit-keyframes puff-out-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+}
+@keyframes puff-out-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes puff-in-center {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+@keyframes puff-in-center {
+    0% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
 /* * Lucky Numbers in Japan pressStart */
 @-webkit-keyframes navCloudDrift {
     30% {
@@ -367,27 +435,26 @@ body {
     display: grid;
     inset: 0;
     overflow: hidden;
+    place-items: center;
     position: absolute;
 }
-
-/* TODO: */
-/* @keyframes cloudDriftOne {
-    from {
-        transform: translateX(-50%);
-    }
-    to {
-        transform: translateX(50%);
-    }   
-} */
 
 #cloud-encapsulator #cloud {
     animation: cloudDriftOne 2s ease-in-out linear;
     height:555px;
     width: 555px;
-    justify-self: left;
-    align-self: top;
-    -webkit-transition: all 1.8s ease-out;
-    transition: all 1.8s ease-out;
+    -webkit-transition: all 1.1s ease-out;
+    transition: all 1.1s ease-out;
+}
+
+#cloud-encapsulator #cloud.hide-cloud {
+    -webkit-animation: puff-out-center 5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+	animation: puff-out-center 5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+}
+
+#cloud-encapsulator #cloud.show-cloud {
+    -webkit-animation: puff-in-center 5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	animation: puff-in-center 5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 #cloud-encapsulator #cloud > * {
