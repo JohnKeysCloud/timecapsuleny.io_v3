@@ -3,6 +3,12 @@ const navButton = document.querySelector('#nav-btn');
 const navList = document.querySelector('#nav-list');
 const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
 const cloudOne = document.getElementById('cloud');
+let cloudState = 'mobile';
+
+function remobilizeCloud() {
+    if (root.clientWidth < 768 && cloudState === 'mobile') return;
+    if (navButton.classList.contains('open')) navButton.click(); 
+}
 
 function driftCloud(e) {
     const clientX = e.clientX;
@@ -17,8 +23,10 @@ function toggleNav() {
     
     if (navList.classList.contains('open')) {
         window.removeEventListener('mousemove', driftCloud);
+        cloudState = 'immobile';
     } else {
         window.addEventListener('mousemove', driftCloud);
+        cloudState = 'mobile';
     }
 }
 
@@ -67,3 +75,4 @@ COLOR_RADIOS.forEach(radio => {
 
 navButton.addEventListener('click', toggleNav);
 window.addEventListener('mousemove', driftCloud);
+window.addEventListener('resize', remobilizeCloud);
