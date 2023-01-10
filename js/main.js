@@ -1,47 +1,24 @@
+const root = document.documentElement;
 const navButton = document.querySelector('#nav-btn');
 const navList = document.querySelector('#nav-list');
 const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
 const cloudOne = document.getElementById('cloud');
 
 function driftCloud(e) {
-    const x = e.clientX;
-    const y = e.clientY;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
 
-    cloudOne.style.transform = `translate(${x - 500}px, ${y - 500}px)`;
-}
-
-function hideCloudOne() {
-    cloudOne.classList.toggle('hide-cloud');
-    cloudOne.addEventListener('animationend', () => {
-        cloudOne.classList.toggle('hide-cloud');
-        cloudOne.style.display = 'none';
-        window.removeEventListener('mousemove', driftCloud);
-    });
-
-}
-
-function showCloudOne() {
-    console.log(1)
-    cloudOne.style.display = 'block';
-    cloudOne.style.animation = 'none';
-    window.addEventListener('mousemove', driftCloud);
-
-    cloudOne.classList.toggle('show-cloud');
-    cloudOne.addEventListener('animationend', () => {
-        cloudOne.classList.toggle('show-cloud');
-        cloudOne.style.animation = 'cloudDriftOne 2s ease-in-out linear';
-    });
+    cloudOne.style.transform = `translate(${clientX - 500}px, ${clientY - 500}px)`;
 }
 
 function toggleNav() {
     navButton.classList.toggle('open');
     navList.classList.toggle('open');
-
-    console.log(navList.classList.contains('open'));
+    
     if (navList.classList.contains('open')) {
-        hideCloudOne();
+        window.removeEventListener('mousemove', driftCloud);
     } else {
-        showCloudOne();
+        window.addEventListener('mousemove', driftCloud);
     }
 }
 
@@ -86,7 +63,7 @@ function switchItemColor(e) {
 
 COLOR_RADIOS.forEach(radio => {
     radio.addEventListener('click', switchItemColor);
-})
+});
 
 navButton.addEventListener('click', toggleNav);
 window.addEventListener('mousemove', driftCloud);

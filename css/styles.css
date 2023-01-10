@@ -1,71 +1,3 @@
-
-@-webkit-keyframes puff-out-center {
-    0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-        opacity: 0;
-    }
-}
-@keyframes puff-out-center {
-    0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-
-    100% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes puff-in-center {
-    0% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-@keyframes puff-in-center {
-    0% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-filter: blur(4px);
-        filter: blur(4px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
 /* * Lucky Numbers in Japan pressStart */
 @-webkit-keyframes navCloudDrift {
     30% {
@@ -414,9 +346,13 @@
 
     --color-kuro: black;
     --color-mashumaro: #f0eae0;
-    --color-sora: skyblue;
+    --color-sora: #87ceeb;
 
     --color-text-primary: #575757;
+
+    --cloud-transition: all 3.33s ease-out;
+    --hide-cloud-transition: transform 3.33s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    --show-cloud-transition: transform 3.33s cubic-bezier(0.470, 0.000, 0.745, 0.715);
 }
 
 body {
@@ -436,30 +372,25 @@ body {
     inset: 0;
     overflow: hidden;
     place-items: center;
+    pointer-events: none;
     position: absolute;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    -webkit-user-select: none; /* Safari */        
+    user-select: none; /* Standard */
 }
 
 #cloud-encapsulator #cloud {
-    animation: cloudDriftOne 2s ease-in-out linear;
     height:555px;
+    -webkit-transition: var(--cloud-transition);
+    transition: var(--cloud-transition);
     width: 555px;
-    -webkit-transition: all 1.1s ease-out;
-    transition: all 1.1s ease-out;
-}
-
-#cloud-encapsulator #cloud.hide-cloud {
-    -webkit-animation: puff-out-center 5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-	animation: puff-out-center 5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-}
-
-#cloud-encapsulator #cloud.show-cloud {
-    -webkit-animation: puff-in-center 5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	animation: puff-in-center 5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 #cloud-encapsulator #cloud > * {
     -webkit-animation: cloudRotate 33s linear infinite alternate;
     animation: cloudRotate 33s linear infinite alternate;
+    filter: drop-shadow(0 0 3px silver);
     object-fit: scale-down;
     z-index: 1;
 }
@@ -625,6 +556,7 @@ nav #nav-list {
     -webkit-animation: navCloudDrift 33s linear infinite alternate;
     animation: navCloudDrift 33s linear infinite alternate;
     content: url('../assets/images/cloud/cloud.svg');
+    filter: drop-shadow(0 0 3px silver);
     inset: 0;
     pointer-events: none;
     position: absolute;
@@ -639,7 +571,6 @@ main .item-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     list-style: none;
-    /* overflow-x: hidden; */
     place-items: center;
 }
 
@@ -779,7 +710,6 @@ main .item-card .color-one::before {
 main .item-card .color-two::before {
     background-color: var(--color-mashumaro);
     box-shadow: inset 0 0 3px black;
-
 }
 
 main .item-card .color-three::before {
@@ -923,10 +853,6 @@ footer p {
 }
 
 @media only screen and (min-width: 1024px) {
-    main .item-list {
-        padding-inline: 15vw;
-    }
-
     main .item-card .radio-color::before {
         -webkit-transform: scale(0.47);
         transform: scale(0.47);
