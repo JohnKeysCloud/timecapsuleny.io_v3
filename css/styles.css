@@ -409,11 +409,15 @@ header #header-top {
 header #header-logo {
     object-fit: scale-down;
     position: relative;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    -webkit-user-select: none; /* Safari */        
+    user-select: none; /* Standard */
     width: min(300px, 50vw);
     z-index: 1;
 }
 
-#nav-btn {
+header #nav-btn {
     align-items: center;
     background: none;
     border: none;
@@ -427,11 +431,11 @@ header #header-logo {
     z-index: 1;
 }
 
-#nav-btn:hover {
+header #nav-btn:hover {
     transform: scale(1.1);
 }
 
-#nav-btn-san {
+header #nav-btn-san {
     background: var(--color-text-primary);
     border-radius: 8px;
     box-shadow: 0 0 8px var(--color-mashumaro);
@@ -443,7 +447,7 @@ header #header-logo {
     width: 20px;
 }
 
-#nav-btn-san::before {
+header #nav-btn-san::before {
     background: var(--color-text-primary);
     border-radius: 3px;
     box-shadow: 0 0 8px var(--color-sora);
@@ -455,7 +459,7 @@ header #header-logo {
     width: 28px;
 }
 
-#nav-btn-san::after {
+header #nav-btn-san::after {
     background: var(--color-text-primary);
     border-radius: 3px;
     box-shadow: 0 0 8px var(--color-sora);
@@ -468,7 +472,7 @@ header #header-logo {
 }
 
 /* NAV-BTN ANIMATION pressStart */
-#nav-btn.open #nav-btn-san {
+header #nav-btn.open #nav-btn-san {
     background: transparent;
     box-shadow: none;
     -webkit-transition: all 380ms ease-out;
@@ -477,7 +481,7 @@ header #header-logo {
     transform: rotate(-360deg);
 }
 
-#nav-btn.open #nav-btn-san::before {
+header #nav-btn.open #nav-btn-san::before {
     opacity: 0.8;
     -webkit-transform: rotate(405deg);
     transform: rotate(405deg);
@@ -486,7 +490,7 @@ header #header-logo {
     width: 33px;
 }
 
-#nav-btn.open #nav-btn-san::after {
+header #nav-btn.open #nav-btn-san::after {
     opacity: 0.8;
     -webkit-transform: rotate(-405deg);
     transform: rotate(-405deg);
@@ -519,9 +523,9 @@ header:has(#nav-btn.open) #nav-list li:nth-of-type(even) {
     transform: rotate(-5deg);
 }
 
-nav #nav-list {
+header nav #nav-list {
     display: none;
-    flex-direction: row;
+    flex-direction: column;
     list-style: none;
     align-items: center;
     justify-content: center;
@@ -535,15 +539,14 @@ nav #nav-list {
     transition: all 3s ease-in-out;
 }
 
-#nav-list.open {
+header #nav-list.open {
     animation: navExpand 1s ease-in-out forwards;
     display: flex;
-    flex-direction: column;
     -webkit-transform-origin: top center;
     transform-origin: top center;
 }
 
-#nav-list a {
+header #nav-list a {
     color: var(--color-sora);
     font-family: 'Dynapuff', monospace;
     font-size: 1.25rem;
@@ -552,7 +555,7 @@ nav #nav-list {
     text-shadow: 0 0 8px black;
 }
 
-#nav-list li:first-of-type a::before {
+header #nav-list li:first-of-type a::before {
     -webkit-animation: navCloudDrift 33s linear infinite alternate;
     animation: navCloudDrift 33s linear infinite alternate;
     content: url('../assets/images/cloud/cloud.svg');
@@ -757,6 +760,10 @@ main .item-card .label-container span {
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    -webkit-user-select: none; /* Safari */        
+    user-select: none; /* Standard */
     width: 15px;
     -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
@@ -819,6 +826,30 @@ footer p {
 }
 
 @media only screen and (min-width: 768px) {
+    header {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 0;  
+    }
+
+    header #nav-btn {
+        display: none;
+    }
+
+    header nav #nav-list {
+        display: flex;
+        gap: 38px;
+        flex-direction: row; 
+        margin-bottom: 0;
+        padding-top: 0;
+        z-index: 1;  
+    }
+
+    header #nav-list li:first-of-type a::before {
+        display: none;
+    } 
+
     main .item-list {
         gap: 33px;
         grid-template-columns: repeat(3, 1fr);
