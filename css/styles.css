@@ -311,8 +311,8 @@
 /* Icon Hang gameOver */
 
 @font-face {
-    font-family: 'Gosha Sans Regular';
-    src: url(../fonts/GoshaSansRegular.otf);
+    font-family: 'pixeBoy';
+    src: url('../assets/fonts/pixeBoy.woff2') format('woff2');
 }
 
 ::selection {
@@ -330,19 +330,24 @@
 }
 
 :root {
+    /* Puck-Man */
+    --clr-binky: #e91113;
+    --clr-pinky: #dc80b1;
+    --clr-inky: #01f0ef;
+    --clr-clyde: #fe8b0d;
+    --clr-sue: #9d199d;
+    --clr-funky: #7fff00;
+    --clr-pacman: #ffea54;
+
     --fs-h1: clamp(1rem, 2.2vw, 1.125rem);
     --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
     --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 
-
     /* ! get radio box shadow here for each mode; */
-
     --background-day: linear-gradient(to bottom, #fcf4c7, #fffce8, var(--color-sora));
     /* --background-day: black; */
     --radio-box-shadow-day: -11px -11px 15px #ffffff;
     /* --radio-box-shadow-day: -8px -8px 5px black; */
-
-
 
     --color-kuro: black;
     --color-mashumaro: #f0eae0;
@@ -351,8 +356,6 @@
     --color-text-primary: #575757;
 
     --cloud-transition: all 3.33s ease-out;
-    --hide-cloud-transition: transform 3.33s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-    --show-cloud-transition: transform 3.33s cubic-bezier(0.470, 0.000, 0.745, 0.715);
 }
 
 body {
@@ -567,6 +570,7 @@ header #nav-list li:first-of-type a::before {
 
 main {
     display: grid;
+    margin-bottom: 88px;
     place-items: center;
 }
 
@@ -618,6 +622,7 @@ main .item-card:hover .item::after {
 
 main .item-card .item video {
     border-radius: inherit;
+    cursor: pointer;
     height: 100%;
     width: 100%;
     max-width: 100%;
@@ -687,6 +692,7 @@ main .item-card .radio-color {
     background: linear-gradient(145deg, #e6e3d1, #fffff8); 
     border-radius: inherit;
     box-shadow: 3px 3px 11px #b5b3a5, var(--radio-box-shadow-day);
+    cursor: pointer;
     height: 30px;
     margin: 0;
     position: relative;
@@ -746,6 +752,7 @@ main .item-card .label-container {
     animation: rotate360Small 33s linear infinite;
     opacity: 0;
     position: absolute;
+    pointer-events: none;
     -webkit-transition: transform 1.11s cubic-bezier(0.84, 0.2, 0.95, 0.37), opacity 380ms ease-in-out;
     transition: transform 1.11s cubic-bezier(0.84, 0.2, 0.95, 0.37), opacity 380ms ease-in-out;
     z-index: 0;
@@ -814,15 +821,62 @@ main .item-card .item-price {
 }
 
 footer {
+    /* border: 2px solid var(--clr-binky); */
+    background: linear-gradient(to bottom, transparent, #FFFCE8, #FFFCE8);
+    bottom: 0;
     align-items: center;
     display: flex;
+    flex-direction: column;
+    font-family: 'pixeBoy';
     justify-content: center;
-    padding-block: 25px;
+    left: 0;
+    /* padding-top: 55px; */
+    padding-bottom: 8px;
+    position: fixed;
+    right: 0;
     z-index: 2;
 }
 
 footer p {
+    font-size: 1rem;
+}
+
+/* ! */
+/* footer #cycloneContainer {
+    opacity: 0.55;
+    transform: scale(0);
+} */
+
+footer p:not(#poweredBy) {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+footer:hover p:not(#poweredBy)::before {
+    opacity: 1;
+}
+
+footer p:not(#poweredBy)::before {
+    color: black;
+    content: '© 2023 Time Capsule NY, LLC. All Rights Reserved';
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    -webkit-transition: opacity 380ms ease-in-out;
+    transition: opacity 380ms ease-in-out;
+} 
+
+footer #poweredBy {
+    color: var(--clr-binky);
     font-size: 0.75rem;
+    text-shadow: 0 0 5px;
+}
+
+footer #cycloneStudios {
+    filter: drop-shadow(0 0 3px var(--color-sora));
+    margin-inline:auto;
+    object-fit: contain;
+    width: 55px;
 }
 
 @media only screen and (min-width: 768px) {
