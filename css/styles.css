@@ -830,7 +830,7 @@ footer {
     justify-content: center;
     left: 0;
     line-height: 1;
-    padding-bottom: 12px;
+    padding-bottom: 15px;
     position: fixed;
     right: 0;
     z-index: 2;
@@ -847,7 +847,6 @@ footer #cycloneContainer {
     transition: all 0.88s ease-in-out;
 }
 
-/* ! */
 footer:hover #cycloneContainer {
     opacity: 1;
     -webkit-transform: scale(1.5) translateY(-28px) rotate(3turn);
@@ -900,7 +899,7 @@ footer:hover #poweredBy {
 
 footer #cycloneStudios {
     margin-inline:auto;
-    object-fit: cover;
+    object-fit: scale-down;
     width: 50px;
 }
 
@@ -959,6 +958,10 @@ footer #cycloneStudios {
     
     main .item-card main .item-price {
         margin-bottom: 0;
+    }
+
+    footer {
+        padding-bottom: 12px
     }
 }
 
