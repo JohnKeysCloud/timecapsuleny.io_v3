@@ -821,7 +821,6 @@ main .item-card .item-price {
 }
 
 footer {
-    /* border: 2px solid var(--clr-binky); */
     background: linear-gradient(to bottom, transparent, #FFFCE8, #FFFCE8);
     bottom: 0;
     align-items: center;
@@ -830,33 +829,47 @@ footer {
     font-family: 'pixeBoy';
     justify-content: center;
     left: 0;
-    /* padding-top: 55px; */
-    padding-bottom: 8px;
+    line-height: 1;
+    padding-bottom: 12px;
     position: fixed;
     right: 0;
     z-index: 2;
 }
 
 footer p {
+    color: black;
     font-size: 1rem;
 }
 
+footer #cycloneContainer {
+    opacity: 0.5;
+    -webkit-transition: all 0.88s ease-in-out;
+    transition: all 0.88s ease-in-out;
+}
+
 /* ! */
-/* footer #cycloneContainer {
-    opacity: 0.55;
-    transform: scale(0);
-} */
-
-footer p:not(#poweredBy) {
-    margin-bottom: 8px;
-    position: relative;
-}
-
-footer:hover p:not(#poweredBy)::before {
+footer:hover #cycloneContainer {
     opacity: 1;
+    -webkit-transform: scale(1.5) translateY(-28px) rotate(3turn);
+    transform: scale(1.5) translateY(-28px) rotate(3turn);
 }
 
-footer p:not(#poweredBy)::before {
+footer #footnote {
+    opacity: 0.7;
+    position: relative;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+    -webkit-transition: all 0.88s ease-in-out;
+    transition: all 0.88s ease-in-out;
+}
+
+footer:hover #footnote {
+    opacity: 0.7;
+    -webkit-transform: translateY(33px);
+    transform: translateY(33px);
+}
+
+footer #footnote::before {
     color: black;
     content: '© 2023 Time Capsule NY, LLC. All Rights Reserved';
     inset: 0;
@@ -866,17 +879,29 @@ footer p:not(#poweredBy)::before {
     transition: opacity 380ms ease-in-out;
 } 
 
+footer:hover #footnote::before {
+    opacity: 1;
+}
+
 footer #poweredBy {
     color: var(--clr-binky);
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     text-shadow: 0 0 5px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.88s ease-in-out 0.88s;
+    transition: all 0.88s ease-in-out 0.88s;
+}
+
+footer:hover #poweredBy {
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 footer #cycloneStudios {
-    filter: drop-shadow(0 0 3px var(--color-sora));
     margin-inline:auto;
-    object-fit: contain;
-    width: 55px;
+    object-fit: cover;
+    width: 50px;
 }
 
 @media only screen and (min-width: 768px) {

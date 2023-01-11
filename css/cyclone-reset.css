@@ -66,6 +66,10 @@ svg {
     max-width: 100%;
 }
 
+img {
+    image-rendering: crisp-edges;
+}
+
 button {
     background-color: transparent;
     border: none;
