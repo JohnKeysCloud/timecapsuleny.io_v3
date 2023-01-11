@@ -77,6 +77,10 @@ button {
     padding: 0;
 }
 
+picture img {
+    object-fit: scale-down;
+}
+
 /* change colours to suit your needs */
 ins {
     background-color: #ff9;

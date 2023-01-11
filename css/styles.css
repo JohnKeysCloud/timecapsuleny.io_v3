@@ -394,7 +394,6 @@ body {
     -webkit-animation: cloudRotate 33s linear infinite alternate;
     animation: cloudRotate 33s linear infinite alternate;
     filter: drop-shadow(0 0 3px silver);
-    object-fit: scale-down;
     z-index: 1;
 }
 
@@ -410,7 +409,6 @@ header #header-top {
 }
 
 header #header-logo {
-    object-fit: scale-down;
     position: relative;
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
@@ -527,22 +525,23 @@ header:has(#nav-btn.open) #nav-list li:nth-of-type(even) {
 }
 
 header nav #nav-list {
+    align-items: center;
     display: none;
     flex-direction: column;
-    list-style: none;
-    align-items: center;
+    gap: 33px;
     justify-content: center;
-    width: max-content;
-    gap: 38px;
-    padding-top: 25px;
+    list-style: none;
     margin-bottom: 33px;
     margin-inline: auto;
+    padding-top: 25px;
     text-align: center;
     -webkit-transition: all 3s ease-in-out;
     transition: all 3s ease-in-out;
+    width: max-content;
 }
 
 header #nav-list.open {
+    -webkit-animation: navExpand 1s ease-in-out forwards;
     animation: navExpand 1s ease-in-out forwards;
     display: flex;
     -webkit-transform-origin: top center;
@@ -626,7 +625,7 @@ main .item-card .item video {
     height: 100%;
     width: 100%;
     max-width: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-transition: all 380ms ease-in-out;
@@ -726,6 +725,7 @@ main .item-card .color-three::before {
 }
 
 main .item-card .radio-color::after {
+    -webkit-animation: 3s rotateRadioChecked ease-out infinite;
     animation: 3s rotateRadioChecked ease-out infinite;
     border-radius: inherit;
     border-top: 5px ridge var(--color-sora);
@@ -734,6 +734,7 @@ main .item-card .radio-color::after {
     inset: 0;
     opacity: 0;
     position: absolute;
+    -webkit-transition: all 380ms ease-in-out;
     transition: all 380ms ease-in-out;
     z-index: -1;
 }
@@ -749,6 +750,7 @@ main .item-card .radio-color:checked ~ .label-container {
 }
 
 main .item-card .label-container {
+    -webkit-animation: rotate360Small 33s linear infinite;
     animation: rotate360Small 33s linear infinite;
     opacity: 0;
     position: absolute;
@@ -953,6 +955,7 @@ footer #cycloneStudios {
     }
 
     main .item-card .label-container {
+        -webkit-animation: rotate360Medium 33s linear infinite;
         animation: rotate360Medium 33s linear infinite;
     }
     
@@ -972,6 +975,7 @@ footer #cycloneStudios {
     }
 
     main .item-card .label-container {
+        -webkit-animation: rotate360Large 33s linear infinite;
         animation: rotate360Large 33s linear infinite;
     }
 }
