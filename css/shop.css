@@ -139,11 +139,11 @@
     }
 }
 
-main {
+/* main {
     display: grid;
     margin-bottom: 88px;
     place-items: center;
-}
+} */
 
 main .item-list {
     display: grid;

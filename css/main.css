@@ -176,7 +176,7 @@ body {
     -webkit-animation: cloudRotate 33s linear infinite alternate;
     animation: cloudRotate 33s linear infinite alternate;
     filter: drop-shadow(0 0 3px silver);
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 header {
@@ -350,6 +350,13 @@ header #nav-list li:first-of-type a::before {
     position: absolute;
     z-index: -1;
 } 
+
+main {
+    display: grid;
+    margin-bottom: 88px;
+    place-items: center;
+    z-index: 1;
+}
 
 footer {
     background: linear-gradient(to bottom, transparent, #FFFCE8, #FFFCE8);

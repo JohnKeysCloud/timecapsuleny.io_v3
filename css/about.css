@@ -1,0 +1,98 @@
+main {
+    background-color: #fffce8;
+    border-radius: 33px;
+    box-shadow: 0 0 3px black;
+    margin-inline: auto;
+    padding-block: 25px;
+    padding-inline: 5.5vw;
+    width: 90vw;
+}
+
+main #about {
+    font-family: 'Dynapuff', monospace;
+    line-height: 1.5;
+    text-align: center;;
+}
+
+main #about #about-text-content {
+    margin-bottom: 15px;
+}
+
+main #about #about-text-content #time-capsule-logo {
+    display: inline-block;
+    width: 133px;
+    vertical-align: -3.5px;
+}
+
+main #about p {
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+}
+
+main #about p:nth-of-type(4) {
+    margin-bottom: 15px;
+}
+
+main #about-text-content p:last-child {
+    margin-bottom: 0;
+
+}
+
+/* main #about #encap-logo-container {
+    animation: hover;
+} */
+
+main #about #encap-logo {
+    margin-bottom: 15px;
+}
+
+
+main #about #encapsulation-commercial {
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px -1px black;
+    margin-bottom: 33px;
+    padding-top: 48%;
+    position:relative
+}
+
+main #about #encapsulation-commercial iframe {
+    border-radius: inherit;
+}
+
+main #socials {
+    /* ! */
+    display: none;
+    border: 2px solid red;
+    margin-bottom: 33px;
+    padding-block: 22px;
+    width: 100%;
+}
+
+main #socials .header-3 {
+    margin-bottom: 21px;
+    text-align: center;
+}
+
+main #socials ul {
+    align-items: center;
+    display: flex;
+    font-size: 8px;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 100%;
+
+}
+
+main #socials ul li {
+    border: 2px solid silver;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    height: 30px;
+    width: 30px;
+}
+
+main #contact {
+    display: none;
+}
