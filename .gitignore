@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Snippets
+# Customs
 snippets.html
+freit.md
