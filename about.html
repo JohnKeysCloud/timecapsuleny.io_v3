@@ -49,7 +49,9 @@
     </header>
     <main>
         <section id="about">
+            <h1 class="section-header">About Us</h1>
             <div id="about-text-content">
+
                 <p>
                     <picture class="inline-image">
                         <img src="assets/images/logos/time-capsule.svg" alt="Time Capsule NY">
@@ -88,8 +90,8 @@
                 </p>
             </div>
                 
-            <div class="cloud-svg-wrapper">
-                <svg class="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <div class="svg-wrapper">
+                <svg class="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="black" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
                     <path d="M-5 100 Q 0 20 5 100 Z
                         M0 100 Q 5 0 10 100
                         M5 100 Q 10 30 15 100
@@ -117,25 +119,92 @@
         </section>
 
         <section id="socials">
-            <h3 class="header-3">Socials</h3>
+            <h1 class="section-header">Socials</h1>
             <ul>
-                <li><a href="#" class="socials-links">D</a></li>
-                <li><a href="#" class="socials-links">I</a></li>
-                <li><a href="#" class="socials-links">TT</a></li>
-                <li><a href="#" class="socials-links">T</a></li>
+                <li>
+                    <a href="https://discord.gg/sMuXrzpKv3" class="socials-links" target="_blank" rel="noopener">
+                        <picture class="icon">
+                            <img src="assets/images/icons/ico-discord.svg" alt="Discord">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/timecapsuleny/" class="socials-links" target="_blank" rel="noopener">
+                        <picture class="icon">
+                            <img src="assets/images/icons/ico-instagram.svg" alt="Instagram">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@timecapsuleny" class="socials-links" target="_blank" rel="noopener">
+                        <picture class="icon">
+                            <img src="assets/images/icons/ico-tiktok.svg" alt="TikTok">
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/timecapsuleny" class="socials-links" target="_blank" rel="noopener">
+                        <picture class="icon">
+                            <img src="assets/images/icons/ico-twitter.svg" alt="Twitter">
+                        </picture>
+                    </a>
+                </li>
             </ul>
+                <div class="svg-wrapper">
+                <svg class="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#FFFCE8" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M-5 100 Q 0 20 5 100 Z
+                        M0 100 Q 5 0 10 100
+                        M5 100 Q 10 30 15 100
+                        M10 100 Q 15 10 20 100
+                        M15 100 Q 20 30 25 100
+                        M20 100 Q 25 -10 30 100
+                        M25 100 Q 30 10 35 100
+                        M30 100 Q 35 30 40 100
+                        M35 100 Q 40 10 45 100
+                        M40 100 Q 45 50 50 100
+                        M45 100 Q 50 20 55 100
+                        M50 100 Q 55 40 60 100
+                        M55 100 Q 60 60 65 100
+                        M60 100 Q 65 50 70 100
+                        M65 100 Q 70 20 75 100
+                        M70 100 Q 75 45 80 100
+                        M75 100 Q 80 30 85 100
+                        M80 100 Q 85 20 90 100
+                        M85 100 Q 90 50 95 100
+                        M90 100 Q 95 25 100 100
+                        M95 100 Q 100 15 105 100 Z">
+                    </path>
+                </svg>
+            </div>
         </section>
         
         <section id="contact">
-            <h3 class="header-3">Contact</h3>
-            <!-- <form action=""></form> -->
-            <ul>
-                <li><a href="https://discord.gg/sMuXrzpKv3" class="socials-links" target="_blank" rel="noopener">Discord</a></li>
-                <li><a href="#" class="socials-links">Instagram</a></li>
-                <li><a href="https://www.tiktok.com/@timecapsuleny" class="socials-links" target="_blank" rel="noopener">TikTok</a></li>
-                <li><a href="https://twitter.com/timecapsuleny" class="socials-links">Twitter</a></li>
-            </ul>
+            <form id="contact-form" method="POST" name="contact">
+                <fieldset form="contact-form">
+                    <legend class="section-header">Contact</legend>
+
+                    <div class="input-container">
+                        <label for="name">Name</label>
+                        <input type="text" placeholder="FULL NAME" name="name" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="email">E-mail</label>
+                        <input type="email" placeholder="E-MAIL" name="email" pattern="([\w\.-]+)@([\w-]+)\.([a-zA-Z]{2,3})([\.][a-zA-Z]{2,3})?" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="message">Message</label>
+                        <textarea placeholder="WRITE STUFF HERE" name="message" required></textarea>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="submit" form="contact-form" aria-label="submit">send to moon</button>
+                    </div>
+                </fieldset>
+            </form>
         </section>
+
     </main>
     <footer>
         <p id="footnote">© 2023 Time Capsule NY, LLC. All Rights Reserved</p>

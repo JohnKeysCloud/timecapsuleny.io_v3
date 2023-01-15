@@ -96,25 +96,50 @@
     } 
 }
 
+/* UTILITY CLASSES pressStart */
+.section-header {
+    color: var(--color-sora);
+    font-size: 1.313rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.svg-wrapper {
+    bottom: 0;
+    line-height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+/* UTILITY CLASSES gameOver */
+
 main {
     background-color: #fffce8;
     box-shadow: inset 0 0 33px black;
     border-radius: 55px;
     box-shadow: 0 0 3px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Dynapuff', monospace;
+    line-height: 1.5;
     margin-inline: auto;
-    padding-block: 25px;
-    width: 85vw;
+    padding-block: 15px;
+    width: 88vw;
 }
 
+/* 
+!    ┌─────────────────────────────────────────────────────────────────────────┐
+!    │ aboutSection                                                            │
+!    └─────────────────────────────────────────────────────────────────────────┘
+*/
+
 main #about {
-    font-family: 'Dynapuff', monospace;
-    line-height: 2;
-    position: relative;
     text-align: center;
 }
 
-main #about > :not(.cloud-svg-wrapper) {
-    padding-inline:8vw;
+main #about > :not(.svg-wrapper) {
+    padding-inline: 5vw;
 }
 
 main #about #about-text-content {
@@ -216,56 +241,108 @@ main #about-text-content p:last-child {
     margin-bottom: 77px;
 }
 
-main .cloud-svg-wrapper {
-    bottom: 0;
-    fill: black;
-    line-height: 0;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-}
+/* 
+!    ┌─────────────────────────────────────────────────────────────────────────┐
+!    │ socialsSection                                                          │
+!    └─────────────────────────────────────────────────────────────────────────┘
+*/
 
 main #socials {
-    /* ! */
     background-color: black;
-    /* display: none; */
-    margin-bottom: 33px;
-    padding-block: 22px;
-    font-family: 'Dynapuff' monospace;
-    width: 100%;
 }
 
-main #socials .header-3 {
-    color: var(--color-sora);
-    margin-bottom: 21px;
-    text-align: center;
+main #socials > :not(.svg-wrapper) {
+    padding-inline: 5vw;
 }
 
 main #socials ul {
-    align-items: center;
+    /* border: 2px solid red; */
     display: flex;
-    font-size: 8px;
+    gap: 33px;
     justify-content: space-evenly;
     list-style: none;
+    margin-bottom: 77px;
 }
 
-main #socials ul li {
-    border: 5px ridge var(--color-sora);
+main #socials li {
     border-radius: 50%;
-    display: grid;
-    height: 30px;
-    place-items: center;
-    width: 30px;
+
 }
 
-main #socials ul li a {
+main #socials a {
     color: white;
     text-decoration: none;
 }
 
-main #contact {
-    background-color: black;
-    border: 2px solid red;
-    display: none;
+main #socials .ico {
+    height: 100%;
+    object-fit: scale-down;
     width: 100%;
+}
+
+/* 
+!    ┌─────────────────────────────────────────────────────────────────────────┐
+!    │ contactSection                                                          │
+!    └─────────────────────────────────────────────────────────────────────────┘
+*/
+
+main #contact {
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+main #contact > :not(.svg-wrapper) {
+    padding-inline: 5vw;
+}
+
+main #contact #contact-form {
+    width: 100%;
+}
+
+main #contact fieldset {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    justify-content: center;
+}
+
+main #contact .input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main #contact .input-container label {
+    border: none;
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+    width: 1px;
+}
+
+main #contact .input-container input,
+main #contact  .input-container textarea {
+    border: none;
+    border-radius: 33px;
+    box-shadow: inset 0 0 8px var(--color-sora), 0 0 5px black;
+    font-size: 0.75rem;
+    padding: 5px;
+    text-align: center;
+}
+
+main #contact  .input-container textarea {
+    resize: none;
+}
+
+main #contact button {
+    background-color: var(--color-sora);
+    border-radius: 18px;
+    box-shadow: 0 0 8px var(--color-sora);    
+    color: #FFFCE8;
+    display: inline-block;
+    padding: 3px 10px;
 }

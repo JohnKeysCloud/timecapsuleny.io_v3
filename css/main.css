@@ -97,20 +97,6 @@
     src: url('../assets/fonts/pixeBoy.woff2') format('woff2');
 }
 
-::selection {
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    background-clip: initial;
-    background-color: var(--color-sora);
-    color: white;
-
-}
-
-:focus-visible {
-    outline: ridge 2px chartreuse;
-    outline-offset: -5px;
-}
-
 :root {
     /* Puck-Man */
     --clr-binky: #e91113;
@@ -140,6 +126,20 @@
     --cloud-transition: all 3.33s ease-out;
 }
 
+::selection {
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    background-color: var(--color-sora);
+    color: white;
+
+}
+
+:focus-visible {
+    outline: ridge 2px var(--color-sora);
+    outline-offset: 3px;
+}
+
 body {
     background: var(--background-day);
     color: var(--color-text-primary);
@@ -150,6 +150,10 @@ body {
     justify-content: space-between;
     line-height: 1.5;
     margin: 0;
+}
+
+section {
+    position: relative;
 }
 
 #cloud-encapsulator {
