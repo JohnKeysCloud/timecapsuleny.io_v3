@@ -114,18 +114,29 @@
 /* UTILITY CLASSES gameOver */
 
 main {
+    align-items: center;
     background-color: #fffce8;
-    box-shadow: inset 0 0 33px black;
     border-radius: 55px;
-    box-shadow: 0 0 3px black;
+    box-shadow:  7px 7px 12px #dedbca,
+                -7px -7px 12px #fffce8;
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-family: 'Dynapuff', monospace;
     line-height: 1.5;
     margin-inline: auto;
     padding-block: 15px;
     width: 88vw;
+}
+
+main #main-top > .svg-wrapper {
+    display: none;
+}
+
+main #about > :not(.svg-wrapper),
+main #encapsulation > :not(.svg-wrapper, #encap-link),
+main #socials > :not(.svg-wrapper),
+main #contact > :not(.svg-wrapper) {
+    padding-inline: 5vw;
 }
 
 /* 
@@ -135,11 +146,8 @@ main {
 */
 
 main #about {
+    padding-bottom: 77px;
     text-align: center;
-}
-
-main #about > :not(.svg-wrapper) {
-    padding-inline: 5vw;
 }
 
 main #about p {
@@ -147,25 +155,39 @@ main #about p {
     margin-bottom: 15px;
 }
 
-main #about p:nth-of-type(4) {
-    margin-bottom: 21px
+main #about p:last-child {
+    margin-bottom: 0;
 } 
 
-main #about #encap-link {
-    border-radius: 33px;
-    display: block;
-    margin-bottom: 21px;
-    margin-inline: auto;
-    position: relative;
-    width: clamp(250px, 55vw, 350px);
+main #encapsulation {
+    background-color: black;
+    color: #fffce8;
+    padding-bottom: 77px;
+    padding-top: 8px;
+    text-align: center;
 }
 
-main #about #encap-link:hover {
+main #encapsulation #encap-link {
+    border-radius: 33px;
+    display: block;
+    filter: drop-shadow(0 0 5.5px #fffce8);
+    margin-bottom: 30px;
+    margin-inline: auto;
+    position: relative;
+    width: max-content;
+}
+
+main #encapsulation #encap-link > picture {
+    margin-inline: auto;
+    width: clamp(222px, 77vw, 377px);
+}
+
+main #encapsulation #encap-link:hover {
     -webkit-animation: ease-in-out 0.55s infinite pulse alternate;
     animation: ease-in-out 0.55s infinite pulse alternate;
 } 
 
-main #about #encap-link::before {
+main #encapsulation #encap-link::before {
     border-color: black transparent transparent transparent;
     border-radius: 50%;
     border-style: solid;
@@ -182,13 +204,13 @@ main #about #encap-link::before {
     z-index: 1;
 }
 
-main #about #encap-link:hover::before {
+main #encapsulation #encap-link:hover::before {
     opacity: 1;
     -webkit-transform: translateY(8.8px);
     transform: translateY(8.8px);
 }
 
-main #about #encap-link::after {
+main #encapsulation #encap-link::after {
     background: linear-gradient(to right, hsl(0, 100%, 50%), hsl(90, 100%, 50%), hsl(240, 100%, 50%));
     border-radius: inherit;
     box-shadow: inset 0 0 18px 5px #FFFCE8;
@@ -201,35 +223,40 @@ main #about #encap-link::after {
     z-index: -1;
 }
 
-main #about #encap-link:hover::after {
+main #encapsulation #encap-link:hover::after {
     opacity: 0.18;
 } 
 
-main #about #encap-link:hover ~ #encapsulation-commercial {
+main #encapsulation #encap-link:hover ~ #encapsulation-commercial {
     -webkit-animation: ease-in-out 0.88s hvr-icon-buzz-out;
     animation: ease-in-out 0.88s hvr-icon-buzz-out;
 }
 
-main #about #encapsulation-commercial {
+main #encapsulation #encapsulation-commercial {
     background-color: black;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px -1px black;
-    margin-bottom: 33px;
-    padding-top: 48%;
+    border-radius: 33px;
+    box-shadow: 0 5px 18px -1px #fffce8;
+    margin-bottom: 38px;
+    margin-inline: 5vw;
+    padding-top: 56.25%;
     position: relative;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition: 380ms ease-in-out;
+    transition: 380ms ease-in-out;
     vertical-align: middle;
 }
 
-main #about #encapsulation-commercial iframe {
+main #encapsulation #encapsulation-commercial:hover {
+    transform: scale(1.03);
+}
+
+main #encapsulation #encapsulation-commercial iframe {
     border-radius: inherit;
 }
 
-main #about-right {
-    margin-bottom: 77px;
+main #encapsulation p {
+    font-size: clamp(0.75rem, 3vw, 1rem);
 }
 
 /* 
@@ -239,12 +266,8 @@ main #about-right {
 */
 
 main #socials {
-    background-color: black;
+    background-color: var(--color-sora);
     width: 100%;
-}
-
-main #socials > :not(.svg-wrapper) {
-    padding-inline: 5vw;
 }
 
 main #socials .section-header {
@@ -262,7 +285,6 @@ main #socials ul {
 
 main #socials li {
     border-radius: 50%;
-
 }
 
 main #socials a {
@@ -287,10 +309,6 @@ main #contact {
     width: 100%;
 }
 
-main #contact > :not(.svg-wrapper) {
-    padding-inline: 5vw;
-}
-
 main #contact #contact-form {
     margin-inline: auto;
     max-width: 555px;
@@ -309,7 +327,6 @@ main #contact .input-container {
     flex-direction: column;
     width: 100%;
 }
-
 
 main #contact .input-container label {
     border: none;
@@ -355,20 +372,19 @@ main #contact button {
         padding-block: 21px;
     }
 
+    main #about > :not(.svg-wrapper),
+    main #encapsulation > :not(.svg-wrapper, #encap-link),
+    main #socials > :not(.svg-wrapper), 
+    main #contact > :not(.svg-wrapper) {
+        padding-inline: 8vw;
+    }
+
     main #about p {
         margin-bottom: 21px;
     }
 
-    main #about > :not(.svg-wrapper) {
-        padding-inline: 8vw;
-    }
-
-    main #socials > :not(.svg-wrapper) {
-        padding-inline: 8vw;
-    }
-
-    main #contact > :not(.svg-wrapper) {
-        padding-inline: 8vw;
+    main #encapsulation #encapsulation-commercial {
+        margin-inline: 8vw;
     }
 }
 
@@ -377,38 +393,86 @@ main #contact button {
         margin-bottom: 25px;
     }
 
+    main {
+        border-radius: 155px;
+        width: min(77vw, 1000px)
+    }
+
     main #about > :not(.svg-wrapper),
+    main #encapsulation > :not(.svg-wrapper, #encap-link),
     main #socials > :not(.svg-wrapper),
     main #contact > :not(.svg-wrapper) {
-        padding-inline: 5vw;
+        padding-inline: 8vw;
     }
 
-    main {
-        width: min(70vw, 1000px)
+    main #encapsulation #encap-link {
+        margin-bottom: 45px;
     }
 
-    main #about #encapsulation-commercial {
+    main #encapsulation #encapsulation-commercial
+    main #encapsulation #encapsulation-commercial {
+        margin-inline: 8vw;
         padding-top: 56.25%;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    main #about-content-container {
+    main #main-top {
         align-items: center;
         display: flex;
         gap: 55px;
         justify-content: space-between;
     }
+    
+    main #main-top #about {
+        padding-left: 5vw;
+    }
 
-    .text-content-container {
+    main #main-top #encapsulation {
+        color: var(--color-text-primary);
+        padding-right: 5vw;
+    }
+
+    main #main-top #encapsulation #encapsulation-commercial {
+        margin-inline: 0;
+    }
+
+    main #main-top > .svg-wrapper {
+        display: initial;
+    }
+
+    main #main-top #about > .svg-wrapper,
+    main #main-top #encapsulation > .svg-wrapper {
+        display: none;
+    }
+
+    main #main-top #about > *,
+    main #main-top #encapsulation > * {
+        padding-inline: 0vw;
+    }
+
+    main #main-top #encapsulation {
+        background-color: initial;
+    }
+
+    main #main-top #about-content-container {
+        padding: 0;
+    }
+
+    main #main-top #about-content-container .text-content-container {
+        background: #FFFCE8;
+        border-radius: 50px;
+        box-shadow: inset 7px 7px 12px #dedbca,
+                    inset -7px -7px 12px #ffffff;
+        padding: 20px;
         text-align: initial;
     }
 
-    main #about {
-        padding-bottom: 77px;
-    }
-
-    main #about-right {
-        margin-bottom: 0px;
+    main #main-top #encapsulation p {
+        background: #FFFCE8;
+        border-radius: 50px;
+        box-shadow: inset 7px 7px 12px #dedbca,
+                    inset -7px -7px 12px #ffffff;
+        padding: 20px;
     }
 }
