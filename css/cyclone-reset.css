@@ -78,7 +78,7 @@ button {
 }
 
 picture img {
-    object-fit: scale-down;
+    object-fit: contain;
 }
 
 /* change colours to suit your needs */
@@ -102,6 +102,7 @@ del {
 
 dfn {
     font-style: italic;
+    margin-right: 3px;
 
 }
 

@@ -99,7 +99,7 @@
 /* UTILITY CLASSES pressStart */
 .section-header {
     color: var(--color-sora);
-    font-size: 1.313rem;
+    font-size: clamp(1.313rem, 4vw, 2.5rem);
     margin-bottom: 15px;
     text-align: center;
 }
@@ -142,18 +142,8 @@ main #about > :not(.svg-wrapper) {
     padding-inline: 5vw;
 }
 
-main #about #about-text-content {
-    margin-bottom: 15px;
-}
-
-main #about #about-text-content .inline-image {
-    display: inline-block;
-    width: 133px;
-    vertical-align: -3.5px;
-}
-
 main #about p {
-    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 3vw, 1rem);
     margin-bottom: 15px;
 }
 
@@ -163,10 +153,11 @@ main #about p:nth-of-type(4) {
 
 main #about #encap-link {
     border-radius: 33px;
-    box-shadow: inset 0 0 18px 5px #FFFCE8;
     display: block;
     margin-bottom: 21px;
+    margin-inline: auto;
     position: relative;
+    width: clamp(250px, 55vw, 350px);
 }
 
 main #about #encap-link:hover {
@@ -200,7 +191,7 @@ main #about #encap-link:hover::before {
 main #about #encap-link::after {
     background: linear-gradient(to right, hsl(0, 100%, 50%), hsl(90, 100%, 50%), hsl(240, 100%, 50%));
     border-radius: inherit;
-    box-shadow: inset 0 0 18px 1px #FFFCE8;
+    box-shadow: inset 0 0 18px 5px #FFFCE8;
     content: '';
     opacity: 0;
     inset: 0;
@@ -237,7 +228,7 @@ main #about #encapsulation-commercial iframe {
     border-radius: inherit;
 }
 
-main #about-text-content p:last-child {
+main #about-right {
     margin-bottom: 77px;
 }
 
@@ -249,10 +240,15 @@ main #about-text-content p:last-child {
 
 main #socials {
     background-color: black;
+    width: 100%;
 }
 
 main #socials > :not(.svg-wrapper) {
     padding-inline: 5vw;
+}
+
+main #socials .section-header {
+    color: #fffce8;
 }
 
 main #socials ul {
@@ -261,7 +257,7 @@ main #socials ul {
     gap: 33px;
     justify-content: space-evenly;
     list-style: none;
-    margin-bottom: 77px;
+    margin-bottom: 100px;
 }
 
 main #socials li {
@@ -274,10 +270,10 @@ main #socials a {
     text-decoration: none;
 }
 
-main #socials .ico {
-    height: 100%;
+main #socials .icon {
+    display: grid;
     object-fit: scale-down;
-    width: 100%;
+    max-width: 50px;
 }
 
 /* 
@@ -287,7 +283,7 @@ main #socials .ico {
 */
 
 main #contact {
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
     width: 100%;
 }
 
@@ -296,7 +292,8 @@ main #contact > :not(.svg-wrapper) {
 }
 
 main #contact #contact-form {
-    width: 100%;
+    margin-inline: auto;
+    max-width: 555px;
 }
 
 main #contact fieldset {
@@ -313,6 +310,7 @@ main #contact .input-container {
     width: 100%;
 }
 
+
 main #contact .input-container label {
     border: none;
     clip: rect(0, 0, 0, 0);
@@ -325,16 +323,19 @@ main #contact .input-container label {
 }
 
 main #contact .input-container input,
-main #contact  .input-container textarea {
+main #contact .input-container textarea {
     border: none;
     border-radius: 33px;
     box-shadow: inset 0 0 8px var(--color-sora), 0 0 5px black;
-    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    /* max-width: 200px; */
+    /* margin-inline: auto; */
     padding: 5px;
     text-align: center;
 }
 
 main #contact  .input-container textarea {
+    margin-bottom: 18px;
     resize: none;
 }
 
@@ -343,6 +344,71 @@ main #contact button {
     border-radius: 18px;
     box-shadow: 0 0 8px var(--color-sora);    
     color: #FFFCE8;
+    cursor: pointer;
     display: inline-block;
+    margin-bottom: 18px;
     padding: 3px 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        padding-block: 21px;
+    }
+
+    main #about p {
+        margin-bottom: 21px;
+    }
+
+    main #about > :not(.svg-wrapper) {
+        padding-inline: 8vw;
+    }
+
+    main #socials > :not(.svg-wrapper) {
+        padding-inline: 8vw;
+    }
+
+    main #contact > :not(.svg-wrapper) {
+        padding-inline: 8vw;
+    }
+}
+
+@media only screen and (min-width: 888px) {
+    .section-header {
+        margin-bottom: 25px;
+    }
+
+    main #about > :not(.svg-wrapper),
+    main #socials > :not(.svg-wrapper),
+    main #contact > :not(.svg-wrapper) {
+        padding-inline: 5vw;
+    }
+
+    main {
+        width: min(70vw, 1000px)
+    }
+
+    main #about #encapsulation-commercial {
+        padding-top: 56.25%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    main #about-content-container {
+        align-items: center;
+        display: flex;
+        gap: 55px;
+        justify-content: space-between;
+    }
+
+    .text-content-container {
+        text-align: initial;
+    }
+
+    main #about {
+        padding-bottom: 77px;
+    }
+
+    main #about-right {
+        margin-bottom: 0px;
+    }
 }
