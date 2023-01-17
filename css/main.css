@@ -135,8 +135,12 @@
 
 }
 
+:focus {
+    outline: none;
+}
+
 :focus-visible {
-    outline: ridge 2px var(--color-sora);
+    outline: ridge 1px var(--color-sora);
     outline-offset: 3px;
 }
 
