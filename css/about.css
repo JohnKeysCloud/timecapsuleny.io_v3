@@ -117,8 +117,7 @@ main {
     align-items: center;
     background-color: #fffce8;
     border-radius: 55px;
-    box-shadow:  7px 7px 12px #dedbca,
-                -7px -7px 12px #fffce8;
+    box-shadow: 0 0 10px snow;
     display: flex;
     flex-direction: column;
     font-family: 'Dynapuff', monospace;
@@ -179,7 +178,7 @@ main #encapsulation #encap-link {
 
 main #encapsulation #encap-link > picture {
     margin-inline: auto;
-    width: clamp(222px, 77vw, 377px);
+    width: clamp(222px, 77vw, 388px);
 }
 
 main #encapsulation #encap-link:hover {
@@ -433,6 +432,10 @@ main #contact button {
         padding-right: 5vw;
     }
 
+    main #main-top #encap-link {
+        margin-bottom: 15px;
+    }
+
     main #main-top #encapsulation #encapsulation-commercial {
         margin-inline: 0;
     }
@@ -464,8 +467,12 @@ main #contact button {
         border-radius: 50px;
         box-shadow: inset 7px 7px 12px #dedbca,
                     inset -7px -7px 12px #ffffff;
-        padding: 20px;
+        padding: 33px;
         text-align: initial;
+    }
+
+    main #encapsulation #encapsulation-commercial {
+        box-shadow: 0 5px 18px -1px black;
     }
 
     main #main-top #encapsulation p {
@@ -473,6 +480,6 @@ main #contact button {
         border-radius: 50px;
         box-shadow: inset 7px 7px 12px #dedbca,
                     inset -7px -7px 12px #ffffff;
-        padding: 20px;
+        padding: 33px;
     }
 }
