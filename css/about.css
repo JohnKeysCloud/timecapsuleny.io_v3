@@ -98,6 +98,7 @@
 
 /* UTILITY CLASSES pressStart */
 .section-header {
+    text-shadow: 0 0 3px var(--color-sora);
     color: var(--color-sora);
     font-size: clamp(1.313rem, 4vw, 2.5rem);
     margin-bottom: 15px;
@@ -109,7 +110,7 @@
     line-height: 0;
     overflow: hidden;
     position: absolute;
-    width: 100%;
+    width: 1000px;
 }
 /* UTILITY CLASSES gameOver */
 
@@ -117,12 +118,13 @@ main {
     align-items: center;
     background-color: #fffce8;
     border-radius: 55px;
-    box-shadow: 0 0 10px snow;
+    box-shadow: 0 0 15px silver;
     display: flex;
     flex-direction: column;
     font-family: 'Dynapuff', monospace;
     line-height: 1.5;
     margin-inline: auto;
+    overflow-x: hidden;
     padding-block: 15px;
     width: 88vw;
 }

@@ -174,17 +174,18 @@ section {
 }
 
 #cloud-encapsulator #cloud {
-    height:555px;
+    height: 222px;
+    -webkit-transform: scale(8);
+    transform: scale(8);
     -webkit-transition: var(--cloud-transition);
     transition: var(--cloud-transition);
-    width: 555px;
+    width: 222px;
 }
 
 #cloud-encapsulator #cloud > * {
     -webkit-animation: cloudRotate 33s linear infinite alternate;
     animation: cloudRotate 33s linear infinite alternate;
     filter: drop-shadow(0 0 3px silver);
-    /* z-index: 1; */
 }
 
 header {
@@ -450,6 +451,11 @@ footer #cycloneStudios {
 }
 
 @media only screen and (min-width: 768px) {
+    #cloud-encapsulator #cloud {
+        height: 333px;
+        width: 333px;
+    }
+
     header {
         align-items: center;
         display: flex;
@@ -487,6 +493,11 @@ footer #cycloneStudios {
 }
 
 @media only screen and (min-width: 1024px) {
+    #cloud-encapsulator #cloud {
+        height: 555px;
+        width: 555px;
+    }
+
     header {
         margin-bottom: 55px;
     }

@@ -2,6 +2,8 @@ const root = document.documentElement;
 const navButton = document.querySelector('#nav-btn');
 const navList = document.querySelector('#nav-list');
 const cloudOne = document.getElementById('cloud');
+const cloudEncapsulator = document.getElementById('cloud-encapsulator');
+
 let cloudState = 'mobile';
 
 function remobilizeCloud() {
@@ -11,9 +13,12 @@ function remobilizeCloud() {
 
 function driftCloud(e) {
     const clientX = e.clientX;
-    const clientY = e.clientY;
+    const clientY = e.clientY;  
+    
+    let halfCloudEncapsulatorHeight = cloudEncapsulator.offsetHeight / 2;
+    let halfCloudEncapsulatorWidth = cloudEncapsulator.offsetWidth / 2;
 
-    cloudOne.style.transform = `translate(${clientX - 500}px, ${clientY - 500}px)`;
+    cloudOne.style.transform = `translate(${clientX - halfCloudEncapsulatorWidth}px, ${clientY - halfCloudEncapsulatorHeight}px)`;
 }
 
 function toggleNav() {
