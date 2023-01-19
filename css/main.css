@@ -175,8 +175,6 @@ section {
 
 #cloud-encapsulator #cloud {
     height: 222px;
-    -webkit-transform: scale(8);
-    transform: scale(8);
     -webkit-transition: var(--cloud-transition);
     transition: var(--cloud-transition);
     width: 222px;
@@ -495,6 +493,8 @@ footer #cycloneStudios {
 @media only screen and (min-width: 1024px) {
     #cloud-encapsulator #cloud {
         height: 555px;
+        -webkit-transform: scale(8);
+        transform: scale(8);
         width: 555px;
     }
 
