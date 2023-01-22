@@ -1,8 +1,8 @@
 const root = document.documentElement;
 const navButton = document.querySelector('#nav-btn');
 const navList = document.querySelector('#nav-list');
-const cloudOne = document.getElementById('cloud');
 const cloudEncapsulator = document.getElementById('cloud-encapsulator');
+const cloudOne = document.getElementById('cloud');
 
 let cloudState = 'mobile';
 

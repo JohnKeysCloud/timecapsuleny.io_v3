@@ -230,8 +230,9 @@ main .item-three-video:not(:first-of-type) {
 
 main .item-card .item-title {
     color: var(--color-text-primary);
+    font-family: 'dynapuff';
     font-size: var(--fs-h1);
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 25px;
     margin-inline: auto;
     width: max-content;

@@ -100,7 +100,7 @@
 .section-header {
     text-shadow: 0 0 3px var(--color-sora);
     color: var(--color-sora);
-    font-size: clamp(1.313rem, 4vw, 2.5rem);
+    font-size: clamp(1.313rem, 3.8vw, 2.25rem);
     margin-bottom: 15px;
     text-align: center;
 }
@@ -117,7 +117,7 @@
 main {
     align-items: center;
     background-color: #fffce8;
-    border-radius: 55px;
+    border: 33px;
     box-shadow: 0 0 15px silver;
     display: flex;
     flex-direction: column;
@@ -284,20 +284,18 @@ main #socials ul {
     margin-bottom: 100px;
 }
 
-main #socials li {
-    border-radius: 50%;
-}
-
-main #socials a {
-    color: white;
-    text-decoration: none;
-}
-
 main #socials .icon {
     display: grid;
     object-fit: scale-down;
     max-width: 50px;
+    -webkit-transition: transform 111ms ease-in-out;
+    transition: transform 111ms ease-in-out;
 }
+
+main #socials .icon:hover {
+    -webkit-transform: scale(1.33);
+    transform: scale(1.33);
+} 
 
 /* 
 !    ┌─────────────────────────────────────────────────────────────────────────┐
@@ -394,9 +392,13 @@ main #contact button {
         margin-bottom: 25px;
     }
 
-    main {
-        border-radius: 155px;
-        width: min(77vw, 1000px)
+    .text-content-container p {
+        padding-inline: 55px;
+    }
+
+    main {  
+        border-radius: 55px;
+        width: min(80vw, 1000px)
     }
 
     main #about > :not(.svg-wrapper),
@@ -418,6 +420,11 @@ main #contact button {
 }
 
 @media only screen and (min-width: 1200px) {
+
+    .text-content-container p {
+        padding-inline: 0;
+    }
+
     main #main-top {
         align-items: center;
         display: flex;

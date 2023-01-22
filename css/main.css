@@ -99,15 +99,15 @@
 
 :root {
     /* Puck-Man */
-    --clr-binky: #e91113;
-    --clr-pinky: #dc80b1;
-    --clr-inky: #01f0ef;
-    --clr-clyde: #fe8b0d;
-    --clr-sue: #9d199d;
-    --clr-funky: #7fff00;
-    --clr-pacman: #ffea54;
+    --color-binky: #e91113;
+    --color-pinky: #dc80b1;
+    --color-inky: #01f0ef;
+    --color-clyde: #fe8b0d;
+    --color-sue: #9d199d;
+    --color-funky: #7fff00;
+    --color-pacman: #ffea54;
 
-    --fs-h1: clamp(1rem, 2.2vw, 1.125rem);
+    --fs-h1: clamp(0.8313rem, 2.2vw, 1.125rem);
     --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
     --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 
@@ -121,7 +121,7 @@
     --color-mashumaro: #f0eae0;
     --color-sora: #87ceeb;
 
-    --color-text-primary: #575757;
+    --color-text-primary: black;
 
     --cloud-transition: all 3.33s ease-out;
 }
@@ -493,8 +493,6 @@ footer #cycloneStudios {
 @media only screen and (min-width: 1024px) {
     #cloud-encapsulator #cloud {
         height: 555px;
-        -webkit-transform: scale(8);
-        transform: scale(8);
         width: 555px;
     }
 
