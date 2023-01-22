@@ -117,7 +117,7 @@
 main {
     align-items: center;
     background-color: #fffce8;
-    border: 33px;
+    border-radius: 111px;
     box-shadow: 0 0 15px silver;
     display: flex;
     flex-direction: column;
@@ -392,13 +392,13 @@ main #contact button {
         margin-bottom: 25px;
     }
 
-    .text-content-container p {
-        padding-inline: 55px;
+    main {  
+        border-radius: 222px;
+        width: min(80vw, 1000px)
     }
 
-    main {  
-        border-radius: 55px;
-        width: min(80vw, 1000px)
+    main #about .text-content-container p {
+        padding-inline: 55px;
     }
 
     main #about > :not(.svg-wrapper),
@@ -420,16 +420,15 @@ main #contact button {
 }
 
 @media only screen and (min-width: 1200px) {
-
-    .text-content-container p {
-        padding-inline: 0;
+    .text-content-container {
+        padding-inline: 33px;
     }
 
     main #main-top {
         align-items: center;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 55px;
-        justify-content: space-between;
     }
     
     main #main-top #about {
@@ -473,22 +472,18 @@ main #contact button {
 
     main #main-top #about-content-container .text-content-container {
         background: #FFFCE8;
-        border-radius: 50px;
+        border-radius: 100px;
         box-shadow: inset 7px 7px 12px #dedbca,
                     inset -7px -7px 12px #ffffff;
-        padding: 33px;
+        padding-block: 55px;
         text-align: initial;
+    }
+
+    main #main-top #about-content-container .text-content-container p {
+        padding: 0;
     }
 
     main #encapsulation #encapsulation-commercial {
         box-shadow: 0 5px 18px -1px black;
-    }
-
-    main #main-top #encapsulation p {
-        background: #FFFCE8;
-        border-radius: 50px;
-        box-shadow: inset 7px 7px 12px #dedbca,
-                    inset -7px -7px 12px #ffffff;
-        padding: 33px;
     }
 }
