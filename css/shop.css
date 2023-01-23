@@ -164,9 +164,9 @@ main .item-card-no-color {
 }
 
 main .item-card .item {
-    background: #fffce8;
+    background: var(--shop-item-background);
     border-radius: 42%;
-    box-shadow: inset 8px 8px 16px #a6a497, inset -8px -8px 16px #FFFCE8;
+    box-shadow: var(--shop-item-box-shadow);
     display: grid;
     margin-bottom: 11px;
     margin-inline: auto;
@@ -175,7 +175,7 @@ main .item-card .item {
 }
 
 main .item-card .item::after {
-    box-shadow: inset -11px 11px 15px #d9d6c5, inset 11px -11px 15px #FFFCE8;
+    box-shadow: var(--shop-item-box-shadow-hover);
     border-radius: inherit;
     content: '';
     height: 100%;
@@ -263,7 +263,7 @@ main .item-card .radio-color {
     appearance: none;
     background: linear-gradient(145deg, #e6e3d1, #fffff8); 
     border-radius: inherit;
-    box-shadow: 3px 3px 11px #b5b3a5, var(--radio-box-shadow-day);
+    box-shadow: 3px 3px 11px #b5b3a5, var(--shop-radio-shadow);
     cursor: pointer;
     height: 30px;
     margin: 0;

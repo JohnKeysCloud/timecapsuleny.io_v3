@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="assets/images/logos/cyclone-favicon.gif" type="image/gif">
     <script src="js/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/24176ab973.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,6 +32,13 @@
                     <img id="header-logo" src="assets/images/logos/header-logo.webp" alt="Time Capsule NY">
                 </picture>
             </a>
+            <div id="moon-encapsulator">
+                <video oncontextmenu="return false" id="moonCart" playsinline autoplay muted loop height="350" width="350">
+                    <!-- <source src="assets/images/merch-animated/hoodie-theCloud-[kuro]/hoodie-theCloud-[kuro].mp4" type="video/mp4" codecs="hvc1"> -->
+                    <source src="assets/images/logos/cycloneMoon.webm" type="video/webm">
+                    <img src="assets/images/logos/cycloneMoon.png" title="Your browser doesn't support this animated image not support this video ಥ_ಥ">
+                </video>
+            </div>
             <button id="nav-btn" aria-label="Navigation Toggle">
                 <div id="nav-btn-san">
                     <!-- injected via css -->
@@ -43,6 +51,13 @@
 				<li><a href="about.html" class="nav-link">about</a></li>
 				<li><a href="shop.html" class="nav-link">shop</a></li>
 				<li><a href="encapsulation.html" class="nav-link">encapsulation</a></li>
+				<li>
+                    <input type="checkbox" id="theme-switcher">
+                    <label id="theme-switcher-label" for="theme-switcher">
+                        <i class="fa-solid fa-moon" id="moon"></i>                     
+                        <i class="fa-solid fa-sun" id="sun"></i>
+                    </label>
+                </li>
 			</ul>
 		</nav>
     </header>

@@ -98,9 +98,10 @@
 
 /* UTILITY CLASSES pressStart */
 .section-header {
-    text-shadow: 0 0 3px var(--color-sora);
+    text-shadow: 0 0 5px black;
     color: var(--color-sora);
-    font-size: clamp(1.313rem, 3.8vw, 2.25rem);
+    font-family: 'Cyclone';
+    font-size: clamp(1.8313rem, 3.8vw, 2.5rem);
     margin-bottom: 15px;
     text-align: center;
 }

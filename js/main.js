@@ -1,4 +1,5 @@
 const root = document.documentElement;
+const themeSwitch = document.getElementById('theme-switcher');
 const navButton = document.querySelector('#nav-btn');
 const navList = document.querySelector('#nav-list');
 const cloudEncapsulator = document.getElementById('cloud-encapsulator');
@@ -34,6 +35,29 @@ function toggleNav() {
     }
 }
 
+function toggleTheme(e) {
+    console.log(themeSwitch.checked);
+
+    if (e.target.checked) {
+        console.log('night')
+        root.style.setProperty('--background', 'var(--background-night)');
+        root.style.setProperty('--shop-background-item', 'var(--shop-background-item-night)');
+        root.style.setProperty('--shop-item-background', 'var(--shop-item-background-night)');
+        root.style.setProperty('--shop-item-box-shadow', 'var(--shop-item-box-shadow-night)');
+        root.style.setProperty('--shop-item-box-shadow-hover', 'var(--shop-item-box-shadow-hover-night)');
+
+    } else if (!e.target.checked) {
+        console.log('light');
+        root.style.setProperty('--background', 'var(--background-day)');
+        root.style.setProperty('--shop-background-item', 'var(--shop-background-item-day)');
+        root.style.setProperty('--shop-item-background', 'var(--shop-item-background-day)');
+        root.style.setProperty('--shop-item-box-shadow', 'var(--shop-item-box-shadow-day)');
+        root.style.setProperty('--shop-item-box-shadow-hover', 'var(--shop-item-box-shadow-hover-day)');
+
+    }
+}
+
+themeSwitch.addEventListener('click', toggleTheme);
 navButton.addEventListener('click', toggleNav);
 window.addEventListener('mousemove', driftCloud);
 window.addEventListener('resize', remobilizeCloud);
