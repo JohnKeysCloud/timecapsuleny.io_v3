@@ -155,7 +155,7 @@
 
     --color-text-primary-day: var(--color-kuro);
     --background-day: linear-gradient(to bottom, #fcf4c7, var(--color-mashumaro), var(--color-sora));
-    --theme-switch-border-day: 3px solid var(--color-kuro);
+    --theme-switch-border-day: 2px solid var(--color-kuro);
 
     --nav-button-color-day: var(--color-kuro);
     --nav-button-shadow-day: var(--color-sora);
@@ -178,7 +178,7 @@
 
     --color-text-primary-night: var(--color-mashumaro);
     --background-night: var(--color-dusk);
-    --theme-switch-border-night: 3px solid var(--color-sora);
+    --theme-switch-border-night: 2px solid var(--color-sora);
     
     --nav-button-color-night: var(--color-mashumaro);
     --nav-button-shadow-night: var(--color-kuro);
