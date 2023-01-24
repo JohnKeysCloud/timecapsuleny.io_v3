@@ -117,9 +117,10 @@
 
 main {
     align-items: center;
-    background-color: #fffce8;
+    background-color: var(--color-mashumaro);
     border-radius: 111px;
     box-shadow: 0 0 15px silver;
+    color: var(--color-kuro);
     display: flex;
     flex-direction: column;
     font-family: 'Dynapuff', monospace;
@@ -163,7 +164,7 @@ main #about p:last-child {
 
 main #encapsulation {
     background-color: black;
-    color: #fffce8;
+    color: var(--color-mashumaro);
     padding-bottom: 77px;
     padding-top: 8px;
     text-align: center;
@@ -172,7 +173,7 @@ main #encapsulation {
 main #encapsulation #encap-link {
     border-radius: 33px;
     display: block;
-    filter: drop-shadow(0 0 5.5px #fffce8);
+    filter: drop-shadow(0 0 5.5px var(--color-mashumaro));
     margin-bottom: 30px;
     margin-inline: auto;
     position: relative;
@@ -215,7 +216,7 @@ main #encapsulation #encap-link:hover::before {
 main #encapsulation #encap-link::after {
     background: linear-gradient(to right, hsl(0, 100%, 50%), hsl(90, 100%, 50%), hsl(240, 100%, 50%));
     border-radius: inherit;
-    box-shadow: inset 0 0 18px 5px #FFFCE8;
+    box-shadow: inset 0 0 18px 5px var(--color-mashumaro);
     content: '';
     opacity: 0;
     inset: 0;
@@ -237,7 +238,7 @@ main #encapsulation #encap-link:hover ~ #encapsulation-commercial {
 main #encapsulation #encapsulation-commercial {
     background-color: black;
     border-radius: 33px;
-    box-shadow: 0 5px 18px -1px #fffce8;
+    box-shadow: 0 5px 18px -1px var(--color-mashumaro);
     margin-bottom: 38px;
     margin-inline: 5vw;
     padding-top: 56.25%;
@@ -273,7 +274,7 @@ main #socials {
 }
 
 main #socials .section-header {
-    color: #fffce8;
+    color: var(--color-mashumaro);
 }
 
 main #socials ul {
@@ -360,7 +361,7 @@ main #contact button {
     background-color: var(--color-sora);
     border-radius: 18px;
     box-shadow: 0 0 8px var(--color-sora);    
-    color: #FFFCE8;
+    color: var(--color-mashumaro);
     cursor: pointer;
     display: inline-block;
     margin-bottom: 18px;
@@ -437,7 +438,6 @@ main #contact button {
     }
 
     main #main-top #encapsulation {
-        color: var(--color-text-primary);
         padding-right: 5vw;
     }
 
@@ -472,7 +472,7 @@ main #contact button {
     }
 
     main #main-top #about-content-container .text-content-container {
-        background: #FFFCE8;
+        background: var(--color-mashumaro);
         border-radius: 100px;
         box-shadow: inset 7px 7px 12px #dedbca,
                     inset -7px -7px 12px #ffffff;

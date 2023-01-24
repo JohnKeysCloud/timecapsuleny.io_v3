@@ -165,8 +165,8 @@ main .item-card-no-color {
 
 main .item-card .item {
     background: var(--shop-item-background);
-    border-radius: 42%;
     box-shadow: var(--shop-item-box-shadow);
+    border-radius: 42%;
     display: grid;
     margin-bottom: 11px;
     margin-inline: auto;
@@ -229,12 +229,13 @@ main .item-three-video:not(:first-of-type) {
 }
 
 main .item-card .item-title {
-    color: var(--color-text-primary);
-    font-family: 'dynapuff';
+    color: var(--shop-item-title);
+    font-family: 'cyclone';
     font-size: var(--fs-h1);
-    /* font-weight: bold; */
+    letter-spacing: 1px;
     margin-bottom: 25px;
     margin-inline: auto;
+    text-shadow: 0 0 3px var(--color-sora);
     width: max-content;
 }
 
@@ -261,9 +262,9 @@ main .item-card .radio:hover .label-container {
 
 main .item-card .radio-color {
     appearance: none;
-    background: linear-gradient(145deg, #e6e3d1, #fffff8); 
+    background: var(--shop-radio-background);
     border-radius: inherit;
-    box-shadow: 3px 3px 11px #b5b3a5, var(--shop-radio-shadow);
+    box-shadow: var(--shop-radio-shadow-one), var(--shop-radio-shadow-two);
     cursor: pointer;
     height: 30px;
     margin: 0;
@@ -290,7 +291,7 @@ main .item-card .color-one::before {
 
 main .item-card .color-two::before {
     background-color: var(--color-mashumaro);
-    box-shadow: inset 0 0 3px black;
+    box-shadow: inset 0 0 3px var(--color-kuro);
 }
 
 main .item-card .color-three::before {
@@ -302,7 +303,7 @@ main .item-card .radio-color::after {
     animation: 3s rotateRadioChecked ease-out infinite;
     border-radius: inherit;
     border-top: 5px ridge var(--color-sora);
-    box-shadow: 0 0 11px 8px #FFFCEF, inset 0 0 33px 8px silver;
+    box-shadow: 0 0 8px 3px var(--color-sora), inset 0 0 33px 8px silver;
     content: '';
     inset: 0;
     opacity: 0;

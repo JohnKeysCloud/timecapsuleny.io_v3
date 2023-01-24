@@ -103,7 +103,13 @@
 }
 
 :root {
-    /* Puck-Man */
+    /* * MAiN COLORS */
+    --color-kuro: black;
+    --color-dusk: #212121;
+    --color-mashumaro: #fffce8;
+    --color-sora: #87ceeb;
+
+    /* * PUCK-MAN */
     --color-binky: #e91113;
     --color-pinky: #dc80b1;
     --color-inky: #01f0ef;
@@ -112,38 +118,65 @@
     --color-funky: #7fff00;
     --color-pacman: #ffea54;
 
-    --fs-h1: clamp(0.8313rem, 2.2vw, 1.125rem);
+    /* * FONT SiZES */
+    --fs-h1: clamp(1.5rem, 2.75vw, 2rem);
     --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
     --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 
     /* * TOGGLE VARS */
+    --cyclone-filter: var(--cyclone-filter-day);
+    --color-text-primary: var(--color-text-primary-day);
     --background: var(--background-day);
+    --footer-text: var(--footer-text-day);
+    --footer-hover-text: var(--footer-hover-text-day);
+    --footer-background: var(--footer-background-day);
+    --moon-filter: var(--moon-filter-day);
+    --nav-link-color: var(--nav-link-color-day);
+    --theme-switch-border: var(--theme-switch-border-day);
     --shop-item-background: var(--shop-item-background-day);
     --shop-item-box-shadow: var(--shop-item-box-shadow-day);
     --shop-item-box-shadow-hover: var(--shop-item-box-shadow-hover-day);
-    --shop-radio-shadow: var(--shop-radio-shadow-day);
+    --shop-item-title: var(--shop-item-title-day);
+    --shop-radio-background: var(--shop-radio-background-day);
+    --shop-radio-shadow-one: var(--shop-radio-shadow-one-day);
+    --shop-radio-shadow-two: var(--shop-radio-shadow-two-day);
+
     
     /* * DAY MODE */
-    --background-day: linear-gradient(to bottom, #fcf4c7, #fffce8, var(--color-sora));
-    --shop-item-background-day: #FFFCE8;
-    --shop-item-box-shadow-day: inset 8px 8px 16px #a6a497, inset -8px -8px 16px #FFFCE8;
-    --shop-item-box-shadow-hover-day: inset -11px 11px 15px #d9d6c5, inset 11px -11px 15px #FFFCE8;
-    --shop-radio-shadow-day: -11px -11px 15px #ffffff;
+    --cyclone-filter-day: none;
+    --color-text-primary-day: var(--color-kuro);
+    --background-day: linear-gradient(to bottom, #fcf4c7, var(--color-mashumaro), var(--color-sora));
+    --footer-text-day: var(--color-kuro);
+    --footer-background-day: linear-gradient(to bottom, transparent, var(--color-mashumaro), var(--color-mashumaro));
+    --moon-filter-day: drop-shadow(0 0 2px var(--color-kuro));
+    --theme-switch-border-day: 3px solid var(--color-kuro);
+    --nav-link-color-day: var(--color-kuro);
+    --shop-item-background-day: var(--color-mashumaro);
+    --shop-item-box-shadow-day: inset 8px 8px 16px #a6a497, inset -8px -8px 16px var(--color-mashumaro);
+    --shop-item-box-shadow-hover-day: inset -11px 11px 15px #d9d6c5, inset 11px -11px 15px var(--color-mashumaro);
+    --shop-item-title-day: var(--color-kuro);
+    --shop-radio-background-day: linear-gradient(145deg, #e6e3d1, #fffff8);
+    --shop-radio-shadow-one-day: 3px 3px 5px #b5b3a5;
+    --shop-radio-shadow-two-day: -8px -8px 15px #ffffff;
 
     /* * NiGHT MODE */
-    --background-night: #212121;
-    --shop-item-background-night: #212121;
+    --cyclone-filter-night: drop-shadow(0 0 3px var(--color-mashumaro));
+    --color-text-primary-night: var(--color-mashumaro);
+    --background-night: var(--color-dusk);
+    --footer-text-night: var(--color-mashumaro);
+    --footer-background-night: linear-gradient(to bottom, transparent, var(--color-dusk), var(--color-kuro));
+    --moon-filter-night: drop-shadow(0 0 18px ghostwhite);
+    --theme-switch-border-night: 3px solid var(--color-sora);
+    --nav-link-color-night: var(--color-sora);
+    --shop-item-background-night: var(--color-dusk);
     --shop-item-box-shadow-night: inset 7px 7px 14px #0e0e0e, inset -7px -7px 14px #343434;
     --shop-item-box-shadow-hover-night: inset 33px 33px 66px #0e0e0e, inset -33px -33px 66px #343434;
-    --radio-box-shadow-night: -8px -8px 5px black;
+    --shop-item-title-night: var(--color-sora);
+    --shop-radio-background-night: linear-gradient(145deg, #333333, rgb(21, 21, 21)) ; 
+    --shop-radio-shadow-one-night: -3px -3px 5px var(--color-kuro);
+    --shop-radio-shadow-two-night: -1px -2px 3px var(--color-kuro);
 
-
-    --color-kuro: black;
-    --color-mashumaro: #f0eae0;
-    --color-sora: #87ceeb;
-
-    --color-text-primary: black;
-
+    /* * MiSC */
     --cloud-transition: all 3.33s ease-out;
 }
 
@@ -153,7 +186,6 @@
     background-clip: initial;
     background-color: var(--color-sora);
     color: white;
-
 }
 
 :focus {
@@ -246,7 +278,7 @@ header #moon-encapsulator {
 header #moon-encapsulator #moonCart {
     cursor: pointer;
     display: inline-block;
-    filter: drop-shadow(0 0 2px black);
+    filter: var(--moon-filter);
     height: 50px;
     position: relative;
     transition: transform 111ms ease-in-out;
@@ -258,13 +290,13 @@ header #moon-encapsulator #moonCart:hover {
 } 
 
 header #moon-encapsulator::before {
-    background: linear-gradient(to bottom right, var(--color-binky), var(--color-binky), black);
+    background: linear-gradient(to bottom right, var(--color-binky), var(--color-binky), var(--color-kuro));
     box-shadow:  0 0 1px var(--color-binky);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 11px;
     border-top-left-radius: 11px;
     border-top-right-radius: 8px;
-    border: 1px ridge black;
+    border: 1px ridge var(--color-kuro);
     color: white;
     cursor: pointer;
     content: '3';
@@ -273,7 +305,7 @@ header #moon-encapsulator::before {
     padding: 1px 5px;
     position: absolute;
     right: -5px;
-    text-shadow: 0 0 3px black;
+    text-shadow: 0 0 3px var(--color-kuro);
     top: -5px;
     transition: transform 0.88s ease-in-out;
     z-index: 1;
@@ -401,26 +433,27 @@ header #nav-list.open {
 }
 
 header #nav-list a {
-    color: var(--color-sora);
+    color: var(--nav-link-color);
     font-family: 'Cyclone', 'pixeBoy', 'Dynapuff', monospace;
     font-size: clamp(1.5rem, 3.8vw, 2.5rem);
-    font-weight: 700;
-    letter-spacing: 1px;
     text-decoration: none;
-    text-shadow: 0 0 5.5px black;
+    text-shadow: 0 0 3.3px var(--color-sora);
 }
 
 header #nav-list li {
-    background-color: #fffce8;
+    background-color: var(--color-mashumaro);
     border-radius: 33px;
-    box-shadow: inset 0 0 8px var(--color-sora), 0 0 5px black;
+    box-shadow: inset 0 0 8px var(--color-sora), 0 0 5px var(--color-kuro);
     padding: 5px 18px;
     -webkit-transition: all 380ms ease-in-out;
     transition: all 111ms ease-in-out;
 }
 
 header #nav-list li:last-child {
+    border-radius: 50%;
+    background-color: transparent;
     box-shadow: none;
+    padding: 0;
 }
 
 header #nav-list li:hover {
@@ -433,9 +466,9 @@ header #nav-list #theme-switcher {
 
 header #nav-list #theme-switcher-label {
     background: var(--background);
-    border-radius: 50%;
-    border: 5px solid var(--color-sora);
-    box-shadow: 0 0 3px black, inset 0 0 13px var(--color-sora);
+    border-radius: inherit;
+    border: var(--theme-switch-border);
+    box-shadow: 0 0 3px var(--color-kuro), inset 0 0 13px var(--color-sora);
     cursor: pointer;
     display: inline-block;
     padding: 3px 8px;
@@ -488,7 +521,7 @@ main {
 }
 
 footer {
-    background: linear-gradient(to bottom, transparent, #FFFCE8, #FFFCE8);
+    background: var(--footer-background);
     bottom: 0;
     align-items: center;
     display: flex;
@@ -504,7 +537,7 @@ footer {
 }
 
 footer p {
-    color: black;
+    color: var(--footer-text);
     font-size: 1rem;
 }
 
@@ -536,7 +569,7 @@ footer:hover #footnote {
 }
 
 footer #footnote::before {
-    color: black;
+    color: var(--color-sora);
     content: '© 2023 Time Capsule NY, LLC. All Rights Reserved';
     inset: 0;
     opacity: 0;
@@ -565,6 +598,7 @@ footer:hover #poweredBy {
 }
 
 footer #cycloneStudios {
+    filter: var(--cyclone-filter);
     margin-inline:auto;
     object-fit: scale-down;
     width: 50px;
@@ -619,7 +653,6 @@ footer #cycloneStudios {
 
     header #nav-list li:last-of-type {
         display: inline-block;
-
     }
 
     header #nav-list a {
