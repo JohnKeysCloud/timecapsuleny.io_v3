@@ -123,16 +123,21 @@
     --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
     --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 
-    /* * TOGGLE VARS */
+    /* * TOGGLE VARiABLES */
     --cyclone-filter: var(--cyclone-filter-day);
+    --moon-filter: var(--moon-filter-day);
+
     --color-text-primary: var(--color-text-primary-day);
     --background: var(--background-day);
+    --theme-switch-border: var(--theme-switch-border-day);
+    
+    --nav-button-color: var(--nav-button-color-day);
+    --nav-button-shadow: var(--nav-button-shadow-day);
+    --nav-link-color: var(--nav-link-color-day);
     --footer-text: var(--footer-text-day);
     --footer-hover-text: var(--footer-hover-text-day);
     --footer-background: var(--footer-background-day);
-    --moon-filter: var(--moon-filter-day);
-    --nav-link-color: var(--nav-link-color-day);
-    --theme-switch-border: var(--theme-switch-border-day);
+
     --shop-item-background: var(--shop-item-background-day);
     --shop-item-box-shadow: var(--shop-item-box-shadow-day);
     --shop-item-box-shadow-hover: var(--shop-item-box-shadow-hover-day);
@@ -144,13 +149,18 @@
     
     /* * DAY MODE */
     --cyclone-filter-day: none;
+    --moon-filter-day: drop-shadow(0 0 2px var(--color-kuro));
+
     --color-text-primary-day: var(--color-kuro);
     --background-day: linear-gradient(to bottom, #fcf4c7, var(--color-mashumaro), var(--color-sora));
+    --theme-switch-border-day: 3px solid var(--color-kuro);
+
+    --nav-button-color-day: var(--color-kuro);
+    --nav-button-shadow-day: var(--color-sora);
+    --nav-link-color-day: var(--color-kuro);
     --footer-text-day: var(--color-kuro);
     --footer-background-day: linear-gradient(to bottom, transparent, var(--color-mashumaro), var(--color-mashumaro));
-    --moon-filter-day: drop-shadow(0 0 2px var(--color-kuro));
-    --theme-switch-border-day: 3px solid var(--color-kuro);
-    --nav-link-color-day: var(--color-kuro);
+
     --shop-item-background-day: var(--color-mashumaro);
     --shop-item-box-shadow-day: inset 8px 8px 16px #a6a497, inset -8px -8px 16px var(--color-mashumaro);
     --shop-item-box-shadow-hover-day: inset -11px 11px 15px #d9d6c5, inset 11px -11px 15px var(--color-mashumaro);
@@ -161,13 +171,18 @@
 
     /* * NiGHT MODE */
     --cyclone-filter-night: drop-shadow(0 0 3px var(--color-mashumaro));
+    --moon-filter-night: drop-shadow(0 0 18px ghostwhite);
+
     --color-text-primary-night: var(--color-mashumaro);
     --background-night: var(--color-dusk);
+    --theme-switch-border-night: 3px solid var(--color-sora);
+    
+    --nav-button-color-night: var(--color-mashumaro);
+    --nav-button-shadow-night: var(--color-kuro);
+    --nav-link-color-night: var(--color-sora);
     --footer-text-night: var(--color-mashumaro);
     --footer-background-night: linear-gradient(to bottom, transparent, var(--color-dusk), var(--color-kuro));
-    --moon-filter-night: drop-shadow(0 0 18px ghostwhite);
-    --theme-switch-border-night: 3px solid var(--color-sora);
-    --nav-link-color-night: var(--color-sora);
+    
     --shop-item-background-night: var(--color-dusk);
     --shop-item-box-shadow-night: inset 7px 7px 14px #0e0e0e, inset -7px -7px 14px #343434;
     --shop-item-box-shadow-hover-night: inset 33px 33px 66px #0e0e0e, inset -33px -33px 66px #343434;
@@ -330,9 +345,9 @@ header #nav-btn:hover {
 }
 
 header #nav-btn-san {
-    background: var(--color-text-primary);
+    background: var(--nav-button-color);
     border-radius: 8px;
-    box-shadow: 0 0 8px var(--color-mashumaro);
+    box-shadow: 0 0 8px var(--nav-button-shadow);
     display: flex;
     height: 3px;
     justify-content: center;
@@ -342,9 +357,9 @@ header #nav-btn-san {
 }
 
 header #nav-btn-san::before {
-    background: var(--color-text-primary);
+    background: var(--nav-button-color);
     border-radius: 3px;
-    box-shadow: 0 0 8px var(--color-sora);
+    box-shadow: 0 0 8px var(--nav-button-shadow);
     content: '';
     height: 3px;
     position: absolute;
@@ -354,9 +369,9 @@ header #nav-btn-san::before {
 }
 
 header #nav-btn-san::after {
-    background: var(--color-text-primary);
+    background: var(--nav-button-color);
     border-radius: 3px;
-    box-shadow: 0 0 8px var(--color-sora);
+    box-shadow: 0 0 8px var(--nav-button-shadow);
     content: '';
     height: 3px;
     position: absolute;
