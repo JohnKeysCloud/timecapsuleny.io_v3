@@ -139,12 +139,6 @@
     }
 }
 
-/* main {
-    display: grid;
-    margin-bottom: 88px;
-    place-items: center;
-} */
-
 main .item-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -231,11 +225,10 @@ main .item-three-video:not(:first-of-type) {
 main .item-card .item-title {
     color: var(--shop-item-title);
     font-family: 'cyclone';
-    font-size: var(--fs-h1);
+    font-size: var(--fs-h2);
     letter-spacing: 1px;
     margin-bottom: 25px;
     margin-inline: auto;
-    text-shadow: 0 0 3px var(--color-sora);
     width: max-content;
 }
 
@@ -404,7 +397,7 @@ main .item-card .item-price {
     } 
 
     main .item-card {
-        width: min(25vw, 300px);
+        width: min(25vw, 250px);
     }
 
     main .item-card .item {

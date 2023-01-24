@@ -119,7 +119,8 @@
     --color-pacman: #ffea54;
 
     /* * FONT SiZES */
-    --fs-h1: clamp(1.5rem, 2.75vw, 2rem);
+    --fs-h1: clamp(1.5rem, 3.8vw, 2.063rem);
+    --fs-h2: clamp(1.375rem, 2.5vw, 1.625rem);
     --fs-label: clamp(0.75rem, 3.5vw, 0.8313rem);
     --fs-body: clamp(1rem, 1.8vw, 1.125rem);
 
@@ -130,7 +131,7 @@
 
     --color-text-primary: var(--color-text-primary-day);
     --background: var(--background-day);
-    --theme-switch-border: var(--theme-switch-border-day);
+    --theme-switch-box-shadow: var(--theme-switch-box-shadow-day);
     
     --nav-button-color: var(--nav-button-color-day);
     --nav-button-shadow: var(--nav-button-shadow-day);
@@ -155,7 +156,7 @@
 
     --color-text-primary-day: var(--color-kuro);
     --background-day: linear-gradient(to bottom, #fcf4c7, var(--color-mashumaro), var(--color-sora));
-    --theme-switch-border-day: 2px solid var(--color-kuro);
+    --theme-switch-box-shadow-day: inset 0 0 8px 3px var(--color-sora);
 
     --nav-button-color-day: var(--color-kuro);
     --nav-button-shadow-day: var(--color-sora);
@@ -178,7 +179,7 @@
 
     --color-text-primary-night: var(--color-mashumaro);
     --background-night: var(--color-dusk);
-    --theme-switch-border-night: 2px solid var(--color-sora);
+    --theme-switch-box-shadow-night: inset 0 0 10px var(--color-mashumaro);
     
     --nav-button-color-night: var(--color-mashumaro);
     --nav-button-shadow-night: var(--color-kuro);
@@ -458,14 +459,6 @@ header #nav-list.open {
     transform-origin: top center;
 }
 
-header #nav-list a {
-    color: var(--nav-link-color);
-    font-family: 'Cyclone', 'pixeBoy', 'Dynapuff', monospace;
-    font-size: clamp(1.5rem, 3.8vw, 2.5rem);
-    text-decoration: none;
-    text-shadow: 0 0 3.3px var(--color-sora);
-}
-
 header #nav-list li {
     background-color: var(--color-mashumaro);
     border-radius: 33px;
@@ -486,18 +479,24 @@ header #nav-list li:hover {
     transform: scale(1.1);
 } 
 
+header #nav-list a {
+    color: var(--nav-link-color);
+    font-family: 'Cyclone', 'pixeBoy', 'Dynapuff', monospace;
+    font-size: clamp(1.5rem, 3.8vw, 2.063rem);
+    text-decoration: none;
+    /* text-shadow: 0 0 3.3px var(--color-sora); */
+}
+
 header #nav-list #theme-switcher {
     display: none;
 }
 
 header #nav-list #theme-switcher-label {
-    background: var(--background);
     border-radius: inherit;
-    border: var(--theme-switch-border);
-    box-shadow: 0 0 3px var(--color-kuro), inset 0 0 13px var(--color-sora);
+    box-shadow: 0 0 3px var(--color-kuro), var(--theme-switch-box-shadow);
     cursor: pointer;
     display: inline-block;
-    padding: 3px 8px;
+    padding: 2px 8px;
     right: 10px;
     top: 10px;
     -moz-user-select: none; /* Firefox */
@@ -509,35 +508,37 @@ header #nav-list #theme-switcher-label {
 header #nav-list #moon {
     color: #fcf4c7;
     filter: drop-shadow(0 0 3px #fcf4c7);
-    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-size: clamp(1rem, 1.8vw, 1.313rem);
     opacity: 0;
-    -webkit-transform: translate(25px, 1px);
-    transform: translate(25px, 1px);
-    -webkit-transition: all .222s ease-in-out;
-    transition: all .222s ease-in-out;
+    -webkit-transform: translate(25px, 1px) scale(0);
+    transform: translate(25px, 1px) scale(0);
+    -webkit-transition: all .380s ease-in-out;
+    transition: all .380s ease-in-out;
 }
 
 header #nav-list #sun {
+    /* ! make brighter */
     color: var(--color-clyde);
     filter: drop-shadow(0 0 2px var(--color-clyde));
-    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-size: clamp(1rem, 1.8vw, 1.313rem);
     opacity: 1;
-    -webkit-transform: translate(-4px, 1px);
-    transform: translate(-4px, 1px);
-    -webkit-transition: all .222 ease-in-out;
-    transition: all .222s ease-in-out;
+    -webkit-transform: translate(-4px, 1px) scale(1);
+    transform: translate(-4px, 1px) scale(1);
+    -webkit-transition: all .380s ease-in-out;
+    transition: all .380s ease-in-out;
 }
 
 header #nav-list #theme-switcher:checked ~ #theme-switcher-label > #moon {
     opacity: 1;
-    transform: translate(3px, 1px);
+    -webkit-transform: translate(3px, 1px) scale(1);
+    transform: translate(3px, 1px) scale(1);
 }
 
 header #nav-list #theme-switcher:checked ~ #theme-switcher-label > #sun {
-    transform: translate(-25px, 1px);
     opacity: 0;
+    -webkit-transform: translate(-25px, 1px) scale(0);
+    transform: translate(-25px, 1px) scale(0);
 }
-
 
 main {
     display: grid;
@@ -683,10 +684,6 @@ footer #cycloneStudios {
 
     header #nav-list a {
         vertical-align: 10px;
-    }
-
-    header #nav-list #theme-switcher-label {
-        padding: 8px;
     }
 
     footer {
