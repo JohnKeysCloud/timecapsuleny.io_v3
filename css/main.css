@@ -125,6 +125,7 @@
 
     /* * TOGGLE VARiABLES */
     --cyclone-filter: var(--cyclone-filter-day);
+    --cloud-color: var(--cloud-color-day);
     --moon-filter: var(--moon-filter-day);
 
     --color-text-primary: var(--color-text-primary-day);
@@ -149,6 +150,7 @@
     
     /* * DAY MODE */
     --cyclone-filter-day: none;
+    --cloud-color-day: #fffce8;
     --moon-filter-day: drop-shadow(0 0 2px var(--color-kuro));
 
     --color-text-primary-day: var(--color-kuro);
@@ -171,6 +173,7 @@
 
     /* * NiGHT MODE */
     --cyclone-filter-night: drop-shadow(0 0 3px var(--color-mashumaro));
+    --cloud-color-night: rgb(111, 111, 111);
     --moon-filter-night: drop-shadow(0 0 18px ghostwhite);
 
     --color-text-primary-night: var(--color-mashumaro);
@@ -242,6 +245,8 @@ section {
 }
 
 #cloud-encapsulator #cloud {
+    display: grid;
+    place-items: center;
     height: 222px;
     -webkit-transition: var(--cloud-transition);
     transition: var(--cloud-transition);
@@ -252,6 +257,12 @@ section {
     -webkit-animation: cloudRotate 33s linear infinite alternate;
     animation: cloudRotate 33s linear infinite alternate;
     filter: drop-shadow(0 0 3px silver);
+    height: 100%;
+    width: 100%;
+}
+
+#cloud-encapsulator #cloud #cloud-svg-path {
+    fill: var(--cloud-color);
 }
 
 header {

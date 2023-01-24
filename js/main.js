@@ -36,11 +36,10 @@ function toggleNav() {
 }
 
 function toggleTheme(e) {
-    console.log(themeSwitch.checked);
-
     if (e.target.checked) {
         // * NiGHT MODE
         root.style.setProperty('--cyclone-filter', 'var(--cyclone-filter-night)');
+        root.style.setProperty('--cloud-color', 'var(--cloud-color-night)');
         root.style.setProperty('--moon-filter', 'var(--moon-filter-night)');
 
         root.style.setProperty('--color-text-primary', 'var(--color-text-primary-night)');
@@ -66,6 +65,7 @@ function toggleTheme(e) {
     } else if (!e.target.checked) {
         // * DAY MODE 
         root.style.setProperty('--cyclone-filter', 'var(--cyclone-filter-day)');
+        root.style.setProperty('--cloud-color', 'var(--cloud-color-day)');
         root.style.setProperty('--moon-filter', 'var(--moon-filter-day)');
 
         root.style.setProperty('--color-text-primary', 'var(--color-text-primary-day)');
