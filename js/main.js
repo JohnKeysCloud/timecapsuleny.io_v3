@@ -3,9 +3,12 @@ const themeSwitch = document.getElementById('theme-switcher');
 const navButton = document.querySelector('#nav-btn');
 const navList = document.querySelector('#nav-list');
 const cloudEncapsulator = document.getElementById('cloud-encapsulator');
+const moonCart = document.getElementById('moonCart');
 const cloudOne = document.getElementById('cloud');
 
 let cloudState = 'mobile';
+
+let nightMode = localStorage.getItem('nightMode');
 
 function remobilizeCloud() {
     if (root.clientWidth < 768 && cloudState === 'mobile') return;
@@ -35,9 +38,19 @@ function toggleNav() {
     }
 }
 
-function toggleTheme(e) {
-    if (e.target.checked) {
-        // * NiGHT MODE
+function setLocalStorage() {
+    nightMode = localStorage.getItem('nightMode');
+
+    if (themeSwitch.checked) {
+        localStorage.setItem('nightMode', 'enabled');
+    } else if (!themeSwitch.checked) {
+        localStorage.setItem('nightMode', null);
+    }
+}
+
+function toggleTheme() {
+    if (themeSwitch.checked) {
+        // * NiTE MODE
         root.style.setProperty('--cyclone-filter', 'var(--cyclone-filter-night)');
         root.style.setProperty('--cloud-color', 'var(--cloud-color-night)');
         root.style.setProperty('--moon-filter', 'var(--moon-filter-night)');
@@ -60,9 +73,8 @@ function toggleTheme(e) {
         root.style.setProperty('--shop-radio-background', 'var(--shop-radio-background-night)'); 
         root.style.setProperty('--shop-radio-shadow', 'var(--shop-radio-shadow-night)');
         root.style.setProperty('--shop-radio-shadow-one', 'var(--shop-radio-shadow-one-night)');
-        root.style.setProperty('--shop-radio-shadow-two', 'var(--shop-radio-shadow-two-night)');
-        
-    } else if (!e.target.checked) {
+        root.style.setProperty('--shop-radio-shadow-two', 'var(--shop-radio-shadow-two-night)');    
+    } else if (!themeSwitch.checked) {
         // * DAY MODE 
         root.style.setProperty('--cyclone-filter', 'var(--cyclone-filter-day)');
         root.style.setProperty('--cloud-color', 'var(--cloud-color-day)');
@@ -88,8 +100,20 @@ function toggleTheme(e) {
         root.style.setProperty('--shop-radio-shadow-one', 'var(--shop-radio-shadow-one-day)');
         root.style.setProperty('--shop-radio-shadow-two', 'var(--shop-radio-shadow-two-day)');
     }
+
+    return setLocalStorage();
 }
 
+function loadSavedTheme() { 
+    nightMode = localStorage.getItem('nightMode');
+
+    if (localStorage.getItem('nightMode') === 'enabled') {
+        themeSwitch.checked = true;
+        toggleTheme();
+    } 
+}
+
+loadSavedTheme();
 themeSwitch.addEventListener('click', toggleTheme);
 navButton.addEventListener('click', toggleNav);
 window.addEventListener('mousemove', driftCloud);
