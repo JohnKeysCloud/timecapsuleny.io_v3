@@ -98,7 +98,6 @@
 
 /* UTILITY CLASSES pressStart */
 .section-header {
-    text-shadow: 0 0 5px black;
     color: var(--color-sora);
     font-family: 'Cyclone';
     font-size: clamp(1.8313rem, 3.8vw, 2.5rem);

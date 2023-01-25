@@ -229,6 +229,7 @@ main .item-card .item-title {
     letter-spacing: 1px;
     margin-bottom: 25px;
     margin-inline: auto;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.222);
     width: max-content;
 }
 
@@ -299,6 +300,8 @@ main .item-card .radio-color::after {
     box-shadow: 0 0 8px 3px var(--color-sora), inset 0 0 33px 8px silver;
     content: '';
     inset: 0;
+    height: 100%;
+    width: 100%;
     opacity: 0;
     position: absolute;
     -webkit-transition: all 380ms ease-in-out;
