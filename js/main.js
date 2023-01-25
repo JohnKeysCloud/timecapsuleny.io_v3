@@ -62,6 +62,8 @@ function toggleTheme() {
         root.style.setProperty('--nav-button-color', 'var(--nav-button-color-night)');
         root.style.setProperty('--nav-button-shadow', 'var(--nav-button-shadow-night)');
         root.style.setProperty('--nav-link-color', 'var(--nav-link-color-night');
+        root.style.setProperty('--nav-link-background-mobile', 'var(--nav-link-background-mobile-night');
+
         root.style.setProperty('--footer-text', 'var(--footer-text-night)');
         root.style.setProperty('--footer-background', 'var(--footer-background-night)');
 
@@ -87,6 +89,8 @@ function toggleTheme() {
         root.style.setProperty('--nav-button-color', 'var(--nav-button-color-day)');
         root.style.setProperty('--nav-button-shadow', 'var(--nav-button-shadow-day)');
         root.style.setProperty('--nav-link-color', 'var(--nav-link-color-day');
+        root.style.setProperty('--nav-link-background-mobile', 'var(--nav-link-background-mobile-day');
+        
         root.style.setProperty('--footer-text', 'var(--footer-text-day)');
         root.style.setProperty('--footer-background', 'var(--footer-background-day)');
 

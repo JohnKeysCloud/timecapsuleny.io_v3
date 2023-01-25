@@ -136,6 +136,7 @@
     --nav-button-color: var(--nav-button-color-day);
     --nav-button-shadow: var(--nav-button-shadow-day);
     --nav-link-color: var(--nav-link-color-day);
+    --nav-link-background-mobile: var(--nav-link-background-mobile-day);
     --footer-text: var(--footer-text-day);
     --footer-hover-text: var(--footer-hover-text-day);
     --footer-background: var(--footer-background-day);
@@ -161,6 +162,8 @@
     --nav-button-color-day: var(--color-kuro);
     --nav-button-shadow-day: var(--color-sora);
     --nav-link-color-day: var(--color-kuro);
+    --nav-link-background-mobile-day: var(--color-mashumaro);
+
     --footer-text-day: var(--color-kuro);
     --footer-background-day: linear-gradient(to bottom, transparent, var(--color-mashumaro), var(--color-mashumaro));
 
@@ -184,6 +187,8 @@
     --nav-button-color-night: var(--color-mashumaro);
     --nav-button-shadow-night: var(--color-kuro);
     --nav-link-color-night: var(--color-sora);
+    --nav-link-background-mobile-night: none;
+
     --footer-text-night: var(--color-mashumaro);
     --footer-background-night: linear-gradient(to bottom, transparent, var(--color-dusk), var(--color-kuro));
     
@@ -460,10 +465,10 @@ header #nav-list.open {
 }
 
 header #nav-list li {
-    background-color: var(--color-mashumaro);
+    background-color: var(--nav-link-background-mobile);
     border-radius: 33px;
-    box-shadow: inset 0 0 8px var(--color-sora), 0 0 5px var(--color-kuro);
-    padding: 5px 18px;
+    box-shadow: inset 0 0 13px var(--color-sora), 0 0 5px var(--color-kuro);
+    padding: 5px 13px;
     -webkit-transition: all 380ms ease-in-out;
     transition: all 111ms ease-in-out;
 }
