@@ -389,7 +389,11 @@ main .item-card .label-container span:nth-of-type(10) {
 
 main .item-card .item-price {
     color: var(--color-text-primary);
+    font-size: clamp(1rem, 4vw, 1.313rem);
+    font-family: url('../assets/fonts/pixeBoy.woff2');
+    /* font-weight: bold; */
     margin-bottom: 25px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.222);
 }
 
 @media only screen and (min-width: 768px) {
