@@ -149,7 +149,8 @@
     --shop-radio-shadow-one: var(--shop-radio-shadow-one-day);
     --shop-radio-shadow-two: var(--shop-radio-shadow-two-day);
 
-    
+    --about-main-shadow: var(--about-main-shadow-day);
+
     /* * DAY MODE */
     --cyclone-filter-day: none;
     --cloud-color-day: #fffce8;
@@ -175,6 +176,8 @@
     --shop-radio-shadow-one-day: 3px 3px 5px #b5b3a5;
     --shop-radio-shadow-two-day: -8px -8px 15px #ffffff;
 
+    --about-main-shadow-day: none;
+
     /* * NiGHT MODE */
     --cyclone-filter-night: drop-shadow(0 0 3px var(--color-mashumaro));
     --cloud-color-night: rgb(111, 111, 111);
@@ -199,6 +202,8 @@
     --shop-radio-background-night: linear-gradient(145deg, #333333, rgb(21, 21, 21)) ; 
     --shop-radio-shadow-one-night: -3px -3px 5px var(--color-kuro);
     --shop-radio-shadow-two-night: -1px -2px 3px var(--color-kuro);
+
+    --about-main-shadow-night: 0 0 8px 3px black;
 
     /* * MiSC */
     --cloud-transition: all 3.33s ease-out;

@@ -76,6 +76,8 @@ function toggleTheme() {
         root.style.setProperty('--shop-radio-shadow', 'var(--shop-radio-shadow-night)');
         root.style.setProperty('--shop-radio-shadow-one', 'var(--shop-radio-shadow-one-night)');
         root.style.setProperty('--shop-radio-shadow-two', 'var(--shop-radio-shadow-two-night)');    
+
+        root.style.setProperty('--about-main-shadow', ' var(--about-main-shadow-night)');
     } else if (!themeSwitch.checked) {
         // * DAY MODE 
         root.style.setProperty('--cyclone-filter', 'var(--cyclone-filter-day)');
@@ -103,6 +105,8 @@ function toggleTheme() {
         root.style.setProperty('--shop-radio-shadow', 'var(--shop-radio-shadow-day)');
         root.style.setProperty('--shop-radio-shadow-one', 'var(--shop-radio-shadow-one-day)');
         root.style.setProperty('--shop-radio-shadow-two', 'var(--shop-radio-shadow-two-day)');
+
+        root.style.setProperty('--about-main-shadow', ' var(--about-main-shadow-day)');
     }
 
     return setLocalStorage();

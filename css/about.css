@@ -118,7 +118,7 @@ main {
     align-items: center;
     background-color: var(--color-mashumaro);
     border-radius: 111px;
-    box-shadow: 0 15px silver;
+    box-shadow: var(--about-main-shadow);
     color: var(--color-kuro);
     display: flex;
     flex-direction: column;
