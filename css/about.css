@@ -318,10 +318,15 @@ main #contact fieldset {
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-family: 'pixeBoy';
-    font-size: clamp(1rem, 3.8vw, 1.313rem);
     gap: 21px;
     justify-content: center;
+}
+
+main #contact fieldset input::placeholder, 
+main #contact fieldset textarea::placeholder,
+button {
+    font-family: 'pixeBoy', monospace;
+    font-size: clamp(1rem, 3.8vw, 1.313rem);
 }
 
 main #contact .input-container {
@@ -364,14 +369,15 @@ main #contact button {
     cursor: pointer;
     display: inline-block;
     margin-bottom: 18px;
-    padding: 15px 18px;
-    -webkit-transition: transform 380ms ease-in-out;
-    transition: transform 380ms ease-in-out;
+    padding: 11px 18px;
+    text-shadow:  0 0 5px black;
+    -webkit-transition: transform 111ms ease-out;
+    transition: transform 111ms ease-out;
 }
 
 main #contact button:active {
-    -webkit-transform: translateY(5px);
-    transform: translateY(5px);
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
 }
 
 @media only screen and (min-width: 768px) {
