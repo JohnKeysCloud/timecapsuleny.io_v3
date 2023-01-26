@@ -176,7 +176,7 @@
     --shop-radio-shadow-one-day: 3px 3px 5px #b5b3a5;
     --shop-radio-shadow-two-day: -8px -8px 15px #ffffff;
 
-    --about-main-shadow-day: none;
+    --about-main-shadow-day: 0 0 8px 1px var(--color-sora);
 
     /* * NiGHT MODE */
     --cyclone-filter-night: drop-shadow(0 0 3px var(--color-mashumaro));

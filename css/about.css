@@ -117,7 +117,10 @@
 main {
     align-items: center;
     background-color: var(--color-mashumaro);
-    border-radius: 111px;
+    border-bottom-left-radius: 55px;
+    border-bottom-right-radius: 111px;
+    border-top-left-radius: 111px;
+    border-top-right-radius: 55px;
     box-shadow: var(--about-main-shadow);
     color: var(--color-kuro);
     display: flex;
@@ -151,8 +154,11 @@ main #about {
     text-align: center;
 }
 
+main p {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+}
+
 main #about p {
-    font-size: clamp(0.75rem, 3vw, 1rem);
     margin-bottom: 15px;
 }
 
@@ -228,11 +234,6 @@ main #encapsulation #encap-link:hover::after {
     opacity: 0.18;
 } 
 
-main #encapsulation #encap-link:hover ~ #encapsulation-commercial {
-    -webkit-animation: ease-in-out 0.88s hvr-icon-buzz-out;
-    animation: ease-in-out 0.88s hvr-icon-buzz-out;
-}
-
 main #encapsulation #encapsulation-commercial {
     background-color: black;
     border-radius: 33px;
@@ -248,16 +249,17 @@ main #encapsulation #encapsulation-commercial {
     vertical-align: middle;
 }
 
+main #encapsulation #encap-link:hover ~ #encapsulation-commercial {
+    -webkit-animation: ease-in-out 0.88s hvr-icon-buzz-out;
+    animation: ease-in-out 0.88s hvr-icon-buzz-out;
+}
+
 main #encapsulation #encapsulation-commercial:hover {
     transform: scale(1.03);
 }
 
 main #encapsulation #encapsulation-commercial iframe {
     border-radius: inherit;
-}
-
-main #encapsulation p {
-    font-size: clamp(0.75rem, 3vw, 1rem);
 }
 
 /* 
@@ -393,26 +395,35 @@ main #contact button {
     }
 
     main {  
-        border-radius: 222px;
-        width: min(80vw, 1000px)
+        border-bottom-left-radius: 88px;
+        border-bottom-right-radius: 222px;
+        border-top-left-radius: 222px;
+        border-top-right-radius: 88px;
+        width: min(80vw, 975px)
     }
 
-    main #about .text-content-container p {
-        padding-inline: 55px;
+    main #main-top #about-content-container .text-content-container {
+        /* background: var(--color-mashumaro); */
+        border-bottom-left-radius: 55px;
+        border-bottom-right-radius: 133px ;
+        border-top-left-radius: 133px ;
+        border-top-right-radius: 55px ;
+        box-shadow: inset 7px 7px 12px #dedbca,
+                    inset -7px -7px 12px #ffffff, inset 0 0 13px 5.5px var(--color-sora);
+        margin-bottom: 33px;
+        padding: 50px 88px;
     }
 
     main #about > :not(.svg-wrapper),
     main #encapsulation > :not(.svg-wrapper, #encap-link),
-    main #socials > :not(.svg-wrapper),
-    main #contact > :not(.svg-wrapper) {
-        padding-inline: 8vw;
+    main #socials > :not(.svg-wrapper) {
+        padding-inline: 11vw;
     }
 
     main #encapsulation #encap-link {
         margin-bottom: 45px;
     }
 
-    main #encapsulation #encapsulation-commercial
     main #encapsulation #encapsulation-commercial {
         margin-inline: 8vw;
         padding-top: 56.25%;
@@ -433,6 +444,10 @@ main #contact button {
     
     main #main-top #about {
         padding-left: 5vw;
+    }
+
+    main #main-top #about .text-content-container {
+        min-width: 388px;
     }
 
     main #main-top #encapsulation {
@@ -470,12 +485,7 @@ main #contact button {
     }
 
     main #main-top #about-content-container .text-content-container {
-        background: var(--color-mashumaro);
-        border-radius: 100px;
-        box-shadow: inset 7px 7px 12px #dedbca,
-                    inset -7px -7px 12px #ffffff;
-        padding-block: 55px;
-        text-align: initial;
+        padding: 55px 45px;
     }
 
     main #main-top #about-content-container .text-content-container p {
@@ -484,5 +494,9 @@ main #contact button {
 
     main #encapsulation #encapsulation-commercial {
         box-shadow: 0 5px 18px -1px black;
+    }
+
+    main #encapsulation .text-content-container {
+        color: var(--color-kuro);
     }
 }
