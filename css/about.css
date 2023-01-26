@@ -364,13 +364,13 @@ main #contact  .input-container textarea {
 main #contact button {
     /* background-color: var(--color-sora); */
     border-radius: 33px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.555), inset 0 0 33px 5px var(--color-sora);    
+    box-shadow: 0 3px 8px 5px rgba(0, 0, 0, 0.555), inset 0 0 33px 5px var(--color-sora);    
     color: var(--color-mashumaro);
     cursor: pointer;
     display: inline-block;
     margin-bottom: 18px;
     padding: 11px 18px;
-    text-shadow:  0 0 5px black;
+    text-shadow:  0 0 8px black;
     -webkit-transition: transform 111ms ease-out;
     transition: transform 111ms ease-out;
 }
