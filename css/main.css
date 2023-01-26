@@ -486,7 +486,7 @@ header #nav-list li:hover {
 
 header #nav-list a {
     color: var(--nav-link-color);
-    font-family: 'Cyclone', 'pixeBoy', 'Dynapuff', monospace;
+    font-family: 'Cyclone', 'pixeBoy', monospace;
     font-size: clamp(1.5rem, 3.8vw, 2.063rem);
     text-decoration: none;
     text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.222);
