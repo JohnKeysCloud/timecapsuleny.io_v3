@@ -199,6 +199,10 @@ main .item-card .item video {
     z-index: 1;
 }
 
+main .item-card .item video {
+    filter: drop-shadow(0 0 1px var(--color-mashumaro));
+}
+
 main .item-card .item video:hover {
     -webkit-animation-delay: 0s, .2s;
     animation-delay: 0s, .2s;
