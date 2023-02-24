@@ -6,7 +6,6 @@ function switchItemColor(e) {
     
     let closestItemImage = e.target.closest('.item-card').querySelector('.item-img');
     let currentItemColor = closestItemImage.src.match(itemColorRegEx)[0];
-    console.log(currentItemColor);
 
     if (radioValue === currentItemColor) return; 
     
