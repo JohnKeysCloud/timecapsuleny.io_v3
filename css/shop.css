@@ -192,20 +192,18 @@ main .item-card:hover .item::after {
 
 main .item-card .item .item-picture {
     border-radius: inherit;
+    filter: drop-shadow(0 0 1px var(--color-mashumaro));
     cursor: pointer;
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
     object-fit: scale-down;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-transition: all 380ms ease-in-out;
     transition: all 380ms ease-in-out;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    -webkit-user-select: none; /* Safari */        
+    user-select: none; /* Standard */
     z-index: 1;
-}
-
-main .item-card .item .item-picture {
-    filter: drop-shadow(0 0 1px var(--color-mashumaro));
 }
 
 main .item-card .item .item-picture:hover {
