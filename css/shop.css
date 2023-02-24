@@ -139,6 +139,11 @@
     }
 }
 
+.trademark-logo {
+    font-family: 'Space Mono', monospace;
+    padding-left: 1px;
+}
+
 main .item-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -185,7 +190,7 @@ main .item-card:hover .item::after {
     opacity: 1;
 }
 
-main .item-card .item video {
+main .item-card .item .item-picture {
     border-radius: inherit;
     cursor: pointer;
     height: 100%;
@@ -199,11 +204,11 @@ main .item-card .item video {
     z-index: 1;
 }
 
-main .item-card .item video {
+main .item-card .item .item-picture {
     filter: drop-shadow(0 0 1px var(--color-mashumaro));
 }
 
-main .item-card .item video:hover {
+main .item-card .item .item-picture:hover {
     -webkit-animation-delay: 0s, .2s;
     animation-delay: 0s, .2s;
     -webkit-animation-direction: normal, alternate;
@@ -218,12 +223,6 @@ main .item-card .item video:hover {
     animation-name: hvr-icon-bob-float, hvr-icon-bob;
     -webkit-animation-timing-function: ease-out, ease-in-out;
     animation-timing-function: ease-out, ease-in-out;
-}
-
-main .item-one-video:not(:first-of-type),
-main .item-two-video:not(:first-of-type),
-main .item-three-video:not(:first-of-type) {
-    display: none;
 }
 
 main .item-card .item-title {
