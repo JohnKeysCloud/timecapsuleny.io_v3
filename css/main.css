@@ -154,7 +154,7 @@
     /* * DAY MODE */
     --cyclone-filter-day: none;
     --cloud-color-day: #fffce8;
-    --moon-filter-day: drop-shadow(0 0 2px var(--color-kuro));
+    --moon-filter-day: drop-shadow(0 0 1px var(--color-kuro));
 
     --color-text-primary-day: var(--color-kuro);
     --background-day: linear-gradient(to bottom, #fcf4c7, var(--color-mashumaro), var(--color-sora));
@@ -181,7 +181,7 @@
     /* * NiGHT MODE */
     --cyclone-filter-night: drop-shadow(0 0 3px var(--color-mashumaro));
     --cloud-color-night: rgb(55, 55, 55);
-    --moon-filter-night: drop-shadow(0 0 18px ghostwhite);
+    --moon-filter-night: drop-shadow(0 0 8px ghostwhite);
 
     --color-text-primary-night: var(--color-mashumaro);
     --background-night: var(--color-dusk);
