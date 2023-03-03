@@ -1,15 +1,16 @@
 const COLOR_RADIOS = document.querySelectorAll('input[type="radio"]');
 
 function switchItemColor(e) {
-    let radioValue = e.target.value;
-    let itemColorRegEx = /\[(.*?)\]/g;
+    const ITEM_COLOR_REGEX = /\[(.*?)\]/g;
     
-    let closestItemImage = e.target.closest('.item-card').querySelector('.item-img');
-    let currentItemColor = closestItemImage.src.match(itemColorRegEx)[0];
+    const radioValue = e.target.value;
+    const srcColorReplacement = `[${radioValue}]`;
+    const closestItemImage = e.target.closest('.item-card').querySelector('.item-img');
+    const currentItemColor = closestItemImage.src.match(ITEM_COLOR_REGEX)[0].slice(1, -1);
 
     if (radioValue === currentItemColor) return; 
     
-    let newImageSource = closestItemImage.getAttribute('src').replaceAll(itemColorRegEx, `[${radioValue}]`);
+    let newImageSource = closestItemImage.getAttribute('src').replaceAll(ITEM_COLOR_REGEX, srcColorReplacement);
     
     closestItemImage.setAttribute('src', newImageSource);
 }
@@ -17,5 +18,3 @@ function switchItemColor(e) {
 COLOR_RADIOS.forEach(radio => {
     radio.addEventListener('click', switchItemColor);
 });
-
-
